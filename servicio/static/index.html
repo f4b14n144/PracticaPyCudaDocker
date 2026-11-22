@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Convolución GPU</title>
+  <link rel="stylesheet" href="/static/estilos.css">
+</head>
+<body>
+<header class="barra">
+  <div>
+    <h1>Convolución de imágenes con PyCUDA</h1>
+    <p>Práctica 03 - Computación Paralela</p>
+  </div>
+  <div id="estadoGpu" class="estado" title="Estado de la GPU">
+    <span class="punto"></span><span class="texto">Consultando GPU…</span>
+  </div>
+</header>
+
+<main class="lienzo">
+  <form id="formulario" class="panel" novalidate>
+    <section class="bloque">
+      <h2>Imagen</h2>
+      <label id="zona" class="zona" tabindex="0">
+        <input id="archivo" type="file" accept="image/*" hidden>
+        <span class="zona-icono" aria-hidden="true">⇪</span>
+        <span class="zona-texto">Arrastra una imagen aquí o haz clic para seleccionarla</span>
+        <span id="zonaLimites" class="zona-sub">PNG, JPEG, WEBP, BMP, TIFF, GIF…</span>
+      </label>
+      <div id="infoArchivo" class="info-archivo" hidden></div>
+    </section>
+
+    <section class="bloque">
+      <h2>Filtro</h2>
+      <div id="filtros" class="segmentos" role="radiogroup">
+        <button type="button" data-filtro="media" class="activo">Media</button>
+        <button type="button" data-filtro="nitidez">Nitidez</button>
+        <button type="button" data-filtro="laplaciano">Laplaciano</button>
+        <button type="button" data-filtro="personalizada">Personal</button>
+      </div>
+      <p id="descFiltro" class="nota"></p>
+    </section>
+
+    <section class="bloque">
+      <h2>Máscara</h2>
+      <div class="fila-k">
+        <label for="k">Tamaño</label>
+        <input id="k" type="range" min="3" max="31" step="2" value="3">
+        <output id="kValor">3 × 3</output>
+      </div>
+      <div class="rapidos" id="kRapidos"></div>
+      <div id="predefinidas" class="predefinidas" hidden>
+        <span>Partir de:</span>
+        <button type="button" data-pre="identidad">Identidad</button>
+        <button type="button" data-pre="gauss">Gauss</button>
+        <button type="button" data-pre="sobelx">Sobel X</button>
+        <button type="button" data-pre="sobely">Sobel Y</button>
+        <button type="button" data-pre="relieve">Relieve</button>
+        <button type="button" data-pre="bordes">Bordes</button>
+        <button type="button" data-pre="ceros">Ceros</button>
+      </div>
+      <div class="mascara-marco"><div id="mascara" class="mascara"></div></div>
+      <div class="mascara-pie">
+        <span id="sumaMascara"></span>
+        <span id="kernelUsado" class="chip"></span>
+      </div>
+      <p class="nota">Editar cualquier celda convierte la máscara en <b>personalizada</b>.</p>
+    </section>
+
+    <details class="bloque avanzado">
+      <summary><h2>Opciones avanzadas</h2></summary>
+      <div class="campos">
+        <label>Hilos por bloque
+          <select id="hilos"></select>
+        </label>
+        <label>Conversión a 0–255
+          <select id="ajuste">
+            <option value="">Automática</option>
+            <option value="recorte">Redondeo y recorte</option>
+            <option value="desplazar128">+128 y recorte</option>
+            <option value="normalizar">Normalizar min–max</option>
+          </select>
+        </label>
+        <label class="check"><input id="f32" type="checkbox"> Guardar salida float32 (.f32)</label>
+      </div>
+    </details>
+
+    <button id="procesar" class="primario" type="submit" disabled>
+      <span class="spinner" aria-hidden="true"></span>
+      <span class="etiqueta">Procesar</span>
+    </button>
+    <div id="mensaje" class="mensaje" role="alert" hidden></div>
+  </form>
+
+  <section class="trabajo">
+    <div class="visor">
+      <figure class="cuadro">
+        <figcaption>Original <span id="dimOriginal"></span></figcaption>
+        <div class="foto" id="fotoOriginal"><span class="vacio">Sin imagen</span></div>
+      </figure>
+      <figure class="cuadro">
+        <figcaption>
+          Resultado <span id="dimResultado"></span>
+          <a id="descargar" class="boton-sec" href="#" hidden download>↓ Descargar PNG</a>
+          <a id="descargarF32" class="boton-sec" href="#" hidden download>↓ .f32</a>
+        </figcaption>
+        <div class="foto" id="fotoResultado"><span class="vacio">Aún no se ha procesado</span></div>
+      </figure>
+    </div>
+
+    <div class="tiempos" id="tiempos" hidden>
+      <div class="tiempos-cab">
+        <h2>Tiempos <small id="idSolicitud"></small></h2>
+        <div class="kpis">
+          <div><span>Kernel</span><b id="kpiKernel">–</b></div>
+          <div><span>Servidor</span><b id="kpiServidor">–</b></div>
+          <div><span>Cliente total</span><b id="kpiCliente">–</b></div>
+        </div>
+      </div>
+      <div class="barra-tiempos" id="barraTiempos"></div>
+      <table class="tabla">
+        <thead><tr><th>Etapa</th><th>ms</th><th>Alcance</th></tr></thead>
+        <tbody id="tablaTiempos"></tbody>
+      </table>
+    </div>
+
+    <div class="historial" id="historialCaja" hidden>
+      <h2>Historial de esta sesión</h2>
+      <table class="tabla">
+        <thead><tr><th>Hora</th><th>Filtro</th><th>k</th><th>Tamaño</th><th>Hilos</th><th>Kernel ms</th><th>Servidor ms</th><th>Cliente ms</th><th>ID</th></tr></thead>
+        <tbody id="historial"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+.git/
+.idea/
+.venv/
+__pycache__/
+*.pyc
+Imagenes/
+experimentos/
+resultados/
+*.f32
+uv.lock
+dockerize.py
