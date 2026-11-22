@@ -1,0 +1,21 @@
+{
+  "marca_tiempo": "2026-11-22T05:10:06",
+  "url": "http://localhost:5000",
+  "modo": "servicio-docker",
+  "entorno": "RTX 5060 Laptop, Docker Desktop WSL2, cliente en el mismo equipo (localhost), commit bf2fc7d3b14099e4b39a34df6c4e4d366649844e",
+  "primera_solicitud_es_fria": true,
+  "alcance": "inicio_contexto_ms = cuda.init + make_context; inicio_compilacion_ms = SourceModule (nvcc) + get_function + prepare; inicio_total_ms = ambos + lectura del .cu",
+  "atendidas": 0,
+  "commit": "bf2fc7d3b14099e4b39a34df6c4e4d366649844e",
+  "dispositivo": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "en_cola": 0,
+  "error": null,
+  "gpu_disponible": true,
+  "inicio_compilacion_ms": 975.6504140000288,
+  "inicio_contexto_ms": 372.6881750000075,
+  "inicio_total_ms": 1388.1018209999922,
+  "max_cola": 4,
+  "max_hilos_por_bloque": 1024,
+  "memoria_mib": 8123,
+  "procesando": false
+}

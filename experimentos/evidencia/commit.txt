@@ -1,0 +1,1 @@
+bf2fc7d3b14099e4b39a34df6c4e4d366649844e Fabian Mendoza Sun Nov 22 05:03:11 2026 -0500 refactor: cliente de experimentos sin requests

@@ -1,0 +1,243 @@
+== entradas (sha256)
+[OK]    entradas 6000.png df78befce0f7c90c
+[OK]    entradas 4000.png 10b55cd23f7611fb
+[OK]    entradas 2000.png f90f80475ff49a9d
+== matriz manual 3x3
+[OK]    manual media_h128 servicio_vs_a_mano max=0 medio=0 fa3ffebf2dce4757ab3da6fd8b60569f
+[OK]    manual media_h128 directo_vs_a_mano max=0 medio=0 
+[OK]    manual media_h256 servicio_vs_a_mano max=0 medio=0 388ceb5ff99f483ab3d2c8ade5058f9d
+[OK]    manual media_h256 directo_vs_a_mano max=0 medio=0 
+[OK]    manual media_h512 servicio_vs_a_mano max=0 medio=0 a7e981251915483aa80e84f107730642
+[OK]    manual media_h512 directo_vs_a_mano max=0 medio=0 
+[OK]    manual media c_secuencial_vs_a_mano max=0 medio=0 
+[OK]    manual nitidez_h128 servicio_vs_a_mano max=0 medio=0 d9e7397ef61b418aa1ee62a8e4e5ad26
+[OK]    manual nitidez_h128 directo_vs_a_mano max=0 medio=0 
+[OK]    manual nitidez_h256 servicio_vs_a_mano max=0 medio=0 dff1de3905e64e5b9e55a81354c9f382
+[OK]    manual nitidez_h256 directo_vs_a_mano max=0 medio=0 
+[OK]    manual nitidez_h512 servicio_vs_a_mano max=0 medio=0 4d15973e0e7d458b83cc0c2ebb0cc17b
+[OK]    manual nitidez_h512 directo_vs_a_mano max=0 medio=0 
+[OK]    manual nitidez c_secuencial_vs_a_mano max=0 medio=0 
+[OK]    manual laplaciano_h128 servicio_vs_a_mano max=0 medio=0 4bb4609ae9a2494bbd8b41f3c52e43d4
+[OK]    manual laplaciano_h128 directo_vs_a_mano max=0 medio=0 
+[OK]    manual laplaciano_h256 servicio_vs_a_mano max=0 medio=0 1773b122f7b341038962954a6bfaecf3
+[OK]    manual laplaciano_h256 directo_vs_a_mano max=0 medio=0 
+[OK]    manual laplaciano_h512 servicio_vs_a_mano max=0 medio=0 c5ebcbcbb2dd449c9cba6c00371b745e
+[OK]    manual laplaciano_h512 directo_vs_a_mano max=0 medio=0 
+[OK]    manual laplaciano c_secuencial_vs_a_mano max=0 medio=0 
+== conversion 0-255
+[OK]    conversion 2_-10.00 0 esperado 0
+[OK]    conversion 2_310.00 255 esperado 255
+[OK]    conversion 3_-220.00 0 esperado 0
+[OK]    conversion 3_-30.00 98 esperado 98
+[OK]    conversion 3_200.00 255 esperado 255
+[OK]    conversion 1_13.33 13 esperado 13
+[OK]    conversion 1_17.78 18 esperado 18
+== tamanos no multiplos de los hilos
+[OK]    limites lcg1x1_media_k3_h128 servicio_vs_directo max=0 medio=0 bloques=1 resto=1
+[OK]    limites lcg1x1_media_k3_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x1_media_k3_h256 servicio_vs_directo max=0 medio=0 bloques=1 resto=1
+[OK]    limites lcg1x1_media_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x1_media_k3_h512 servicio_vs_directo max=0 medio=0 bloques=1 resto=1
+[OK]    limites lcg1x1_media_k3_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x1_media_k9_h128 servicio_vs_directo max=0 medio=0 bloques=1 resto=1
+[OK]    limites lcg1x1_media_k9_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x1_media_k9_h256 servicio_vs_directo max=0 medio=0 bloques=1 resto=1
+[OK]    limites lcg1x1_media_k9_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x1_media_k9_h512 servicio_vs_directo max=0 medio=0 bloques=1 resto=1
+[OK]    limites lcg1x1_media_k9_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x1_media_k21_h128 servicio_vs_directo max=0 medio=0 bloques=1 resto=1
+[OK]    limites lcg1x1_media_k21_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x1_media_k21_h256 servicio_vs_directo max=0 medio=0 bloques=1 resto=1
+[OK]    limites lcg1x1_media_k21_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x1_media_k21_h512 servicio_vs_directo max=0 medio=0 bloques=1 resto=1
+[OK]    limites lcg1x1_media_k21_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x1_nitidez_k3_h128 servicio_vs_directo max=0 medio=0 bloques=1 resto=1
+[OK]    limites lcg1x1_nitidez_k3_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x1_nitidez_k3_h256 servicio_vs_directo max=0 medio=0 bloques=1 resto=1
+[OK]    limites lcg1x1_nitidez_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x1_nitidez_k3_h512 servicio_vs_directo max=0 medio=0 bloques=1 resto=1
+[OK]    limites lcg1x1_nitidez_k3_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x1_laplaciano_k3_h128 servicio_vs_directo max=0 medio=0 bloques=1 resto=1
+[OK]    limites lcg1x1_laplaciano_k3_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x1_laplaciano_k3_h256 servicio_vs_directo max=0 medio=0 bloques=1 resto=1
+[OK]    limites lcg1x1_laplaciano_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x1_laplaciano_k3_h512 servicio_vs_directo max=0 medio=0 bloques=1 resto=1
+[OK]    limites lcg1x1_laplaciano_k3_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg7x5_media_k3_h128 servicio_vs_directo max=0 medio=0 bloques=1 resto=35
+[OK]    limites lcg7x5_media_k3_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg7x5_media_k3_h256 servicio_vs_directo max=0 medio=0 bloques=1 resto=35
+[OK]    limites lcg7x5_media_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg7x5_media_k3_h512 servicio_vs_directo max=0 medio=0 bloques=1 resto=35
+[OK]    limites lcg7x5_media_k3_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg7x5_media_k9_h128 servicio_vs_directo max=0 medio=0 bloques=1 resto=35
+[OK]    limites lcg7x5_media_k9_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg7x5_media_k9_h256 servicio_vs_directo max=0 medio=0 bloques=1 resto=35
+[OK]    limites lcg7x5_media_k9_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg7x5_media_k9_h512 servicio_vs_directo max=0 medio=0 bloques=1 resto=35
+[OK]    limites lcg7x5_media_k9_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg7x5_media_k21_h128 servicio_vs_directo max=0 medio=0 bloques=1 resto=35
+[OK]    limites lcg7x5_media_k21_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg7x5_media_k21_h256 servicio_vs_directo max=0 medio=0 bloques=1 resto=35
+[OK]    limites lcg7x5_media_k21_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg7x5_media_k21_h512 servicio_vs_directo max=0 medio=0 bloques=1 resto=35
+[OK]    limites lcg7x5_media_k21_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg7x5_nitidez_k3_h128 servicio_vs_directo max=0 medio=0 bloques=1 resto=35
+[OK]    limites lcg7x5_nitidez_k3_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg7x5_nitidez_k3_h256 servicio_vs_directo max=0 medio=0 bloques=1 resto=35
+[OK]    limites lcg7x5_nitidez_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg7x5_nitidez_k3_h512 servicio_vs_directo max=0 medio=0 bloques=1 resto=35
+[OK]    limites lcg7x5_nitidez_k3_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg7x5_laplaciano_k3_h128 servicio_vs_directo max=0 medio=0 bloques=1 resto=35
+[OK]    limites lcg7x5_laplaciano_k3_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg7x5_laplaciano_k3_h256 servicio_vs_directo max=0 medio=0 bloques=1 resto=35
+[OK]    limites lcg7x5_laplaciano_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg7x5_laplaciano_k3_h512 servicio_vs_directo max=0 medio=0 bloques=1 resto=35
+[OK]    limites lcg7x5_laplaciano_k3_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg513x1_media_k3_h128 servicio_vs_directo max=0 medio=0 bloques=5 resto=1
+[OK]    limites lcg513x1_media_k3_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg513x1_media_k3_h256 servicio_vs_directo max=0 medio=0 bloques=3 resto=1
+[OK]    limites lcg513x1_media_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg513x1_media_k3_h512 servicio_vs_directo max=0 medio=0 bloques=2 resto=1
+[OK]    limites lcg513x1_media_k3_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg513x1_media_k9_h128 servicio_vs_directo max=0 medio=0 bloques=5 resto=1
+[OK]    limites lcg513x1_media_k9_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg513x1_media_k9_h256 servicio_vs_directo max=0 medio=0 bloques=3 resto=1
+[OK]    limites lcg513x1_media_k9_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg513x1_media_k9_h512 servicio_vs_directo max=0 medio=0 bloques=2 resto=1
+[OK]    limites lcg513x1_media_k9_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg513x1_media_k21_h128 servicio_vs_directo max=0 medio=0 bloques=5 resto=1
+[OK]    limites lcg513x1_media_k21_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg513x1_media_k21_h256 servicio_vs_directo max=0 medio=0 bloques=3 resto=1
+[OK]    limites lcg513x1_media_k21_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg513x1_media_k21_h512 servicio_vs_directo max=0 medio=0 bloques=2 resto=1
+[OK]    limites lcg513x1_media_k21_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg513x1_nitidez_k3_h128 servicio_vs_directo max=0 medio=0 bloques=5 resto=1
+[OK]    limites lcg513x1_nitidez_k3_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg513x1_nitidez_k3_h256 servicio_vs_directo max=0 medio=0 bloques=3 resto=1
+[OK]    limites lcg513x1_nitidez_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg513x1_nitidez_k3_h512 servicio_vs_directo max=0 medio=0 bloques=2 resto=1
+[OK]    limites lcg513x1_nitidez_k3_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg513x1_laplaciano_k3_h128 servicio_vs_directo max=0 medio=0 bloques=5 resto=1
+[OK]    limites lcg513x1_laplaciano_k3_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg513x1_laplaciano_k3_h256 servicio_vs_directo max=0 medio=0 bloques=3 resto=1
+[OK]    limites lcg513x1_laplaciano_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg513x1_laplaciano_k3_h512 servicio_vs_directo max=0 medio=0 bloques=2 resto=1
+[OK]    limites lcg513x1_laplaciano_k3_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x257_media_k3_h128 servicio_vs_directo max=0 medio=0 bloques=3 resto=1
+[OK]    limites lcg1x257_media_k3_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x257_media_k3_h256 servicio_vs_directo max=0 medio=0 bloques=2 resto=1
+[OK]    limites lcg1x257_media_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x257_media_k3_h512 servicio_vs_directo max=0 medio=0 bloques=1 resto=257
+[OK]    limites lcg1x257_media_k3_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x257_media_k9_h128 servicio_vs_directo max=0 medio=0 bloques=3 resto=1
+[OK]    limites lcg1x257_media_k9_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x257_media_k9_h256 servicio_vs_directo max=0 medio=0 bloques=2 resto=1
+[OK]    limites lcg1x257_media_k9_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x257_media_k9_h512 servicio_vs_directo max=0 medio=0 bloques=1 resto=257
+[OK]    limites lcg1x257_media_k9_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x257_media_k21_h128 servicio_vs_directo max=0 medio=0 bloques=3 resto=1
+[OK]    limites lcg1x257_media_k21_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x257_media_k21_h256 servicio_vs_directo max=0 medio=0 bloques=2 resto=1
+[OK]    limites lcg1x257_media_k21_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x257_media_k21_h512 servicio_vs_directo max=0 medio=0 bloques=1 resto=257
+[OK]    limites lcg1x257_media_k21_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x257_nitidez_k3_h128 servicio_vs_directo max=0 medio=0 bloques=3 resto=1
+[OK]    limites lcg1x257_nitidez_k3_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x257_nitidez_k3_h256 servicio_vs_directo max=0 medio=0 bloques=2 resto=1
+[OK]    limites lcg1x257_nitidez_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x257_nitidez_k3_h512 servicio_vs_directo max=0 medio=0 bloques=1 resto=257
+[OK]    limites lcg1x257_nitidez_k3_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x257_laplaciano_k3_h128 servicio_vs_directo max=0 medio=0 bloques=3 resto=1
+[OK]    limites lcg1x257_laplaciano_k3_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x257_laplaciano_k3_h256 servicio_vs_directo max=0 medio=0 bloques=2 resto=1
+[OK]    limites lcg1x257_laplaciano_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1x257_laplaciano_k3_h512 servicio_vs_directo max=0 medio=0 bloques=1 resto=257
+[OK]    limites lcg1x257_laplaciano_k3_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1001x777_media_k3_h128 servicio_vs_directo max=0 medio=0 bloques=6077 resto=49
+[OK]    limites lcg1001x777_media_k3_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1001x777_media_k3_h256 servicio_vs_directo max=0 medio=0 bloques=3039 resto=49
+[OK]    limites lcg1001x777_media_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1001x777_media_k3_h512 servicio_vs_directo max=0 medio=0 bloques=1520 resto=49
+[OK]    limites lcg1001x777_media_k3_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1001x777_media_k9_h128 servicio_vs_directo max=0 medio=0 bloques=6077 resto=49
+[OK]    limites lcg1001x777_media_k9_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1001x777_media_k9_h256 servicio_vs_directo max=0 medio=0 bloques=3039 resto=49
+[OK]    limites lcg1001x777_media_k9_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1001x777_media_k9_h512 servicio_vs_directo max=0 medio=0 bloques=1520 resto=49
+[OK]    limites lcg1001x777_media_k9_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1001x777_media_k21_h128 servicio_vs_directo max=0 medio=0 bloques=6077 resto=49
+[OK]    limites lcg1001x777_media_k21_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1001x777_media_k21_h256 servicio_vs_directo max=0 medio=0 bloques=3039 resto=49
+[OK]    limites lcg1001x777_media_k21_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1001x777_media_k21_h512 servicio_vs_directo max=0 medio=0 bloques=1520 resto=49
+[OK]    limites lcg1001x777_media_k21_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1001x777_nitidez_k3_h128 servicio_vs_directo max=0 medio=0 bloques=6077 resto=49
+[OK]    limites lcg1001x777_nitidez_k3_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1001x777_nitidez_k3_h256 servicio_vs_directo max=0 medio=0 bloques=3039 resto=49
+[OK]    limites lcg1001x777_nitidez_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1001x777_nitidez_k3_h512 servicio_vs_directo max=0 medio=0 bloques=1520 resto=49
+[OK]    limites lcg1001x777_nitidez_k3_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1001x777_laplaciano_k3_h128 servicio_vs_directo max=0 medio=0 bloques=6077 resto=49
+[OK]    limites lcg1001x777_laplaciano_k3_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1001x777_laplaciano_k3_h256 servicio_vs_directo max=0 medio=0 bloques=3039 resto=49
+[OK]    limites lcg1001x777_laplaciano_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    limites lcg1001x777_laplaciano_k3_h512 servicio_vs_directo max=0 medio=0 bloques=1520 resto=49
+[OK]    limites lcg1001x777_laplaciano_k3_h512 servicio_vs_c_secuencial max=0 medio=0 
+== imagenes reales
+[OK]    imagen 2000_media_k3_h256 servicio_vs_directo max=0 medio=0 png_max=0 id=0e5d6334f85947e88273d2de6f709968
+[OK]    imagen 2000_media_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    imagen 2000_media_k3_h256 servicio_vs_cuda_c max=0 medio=0 
+[OK]    imagen 2000_media_k9_h256 servicio_vs_directo max=0 medio=0 png_max=0 id=d0c53e299329435bad502a975113fce8
+[OK]    imagen 2000_media_k9_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    imagen 2000_media_k9_h256 servicio_vs_cuda_c max=0 medio=0 
+[OK]    imagen 2000_media_k21_h256 servicio_vs_directo max=0 medio=0 png_max=0 id=cc2dae74cd4d48059304584f3b283e56
+[OK]    imagen 2000_media_k21_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    imagen 2000_media_k21_h256 servicio_vs_cuda_c max=0 medio=0 
+[OK]    imagen 2000_nitidez_k3_h256 servicio_vs_directo max=0 medio=0 png_max=0 id=058f96721574449fa877bcef0d6a9ffc
+[OK]    imagen 2000_nitidez_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    imagen 2000_nitidez_k3_h256 servicio_vs_cuda_c max=0 medio=0 
+[OK]    imagen 2000_laplaciano_k3_h256 servicio_vs_directo max=0 medio=0 png_max=0 id=745495aec53a4dd09a35daf59f3ad35e
+[OK]    imagen 2000_laplaciano_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    imagen 2000_laplaciano_k3_h256 servicio_vs_cuda_c max=0 medio=0 
+[OK]    imagen 4000_media_k3_h256 servicio_vs_directo max=0 medio=0 png_max=0 id=6978e83519104c62b017c44b449669b8
+[OK]    imagen 4000_media_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    imagen 4000_media_k3_h256 servicio_vs_cuda_c max=0 medio=0 
+[OK]    imagen 4000_media_k9_h256 servicio_vs_directo max=0 medio=0 png_max=0 id=2ca521905686407d91d9d7d3ec0a8b9d
+[OK]    imagen 4000_media_k9_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    imagen 4000_media_k9_h256 servicio_vs_cuda_c max=0 medio=0 
+[OK]    imagen 4000_media_k21_h256 servicio_vs_directo max=0 medio=0 png_max=0 id=d2c9d8f6ce774ebf939e32fa1e6aa86c
+[OK]    imagen 4000_media_k21_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    imagen 4000_media_k21_h256 servicio_vs_cuda_c max=0 medio=0 
+[OK]    imagen 4000_nitidez_k3_h256 servicio_vs_directo max=0 medio=0 png_max=0 id=93aeaf04526c4eec9f0572bf93c3bbb3
+[OK]    imagen 4000_nitidez_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    imagen 4000_nitidez_k3_h256 servicio_vs_cuda_c max=0 medio=0 
+[OK]    imagen 4000_laplaciano_k3_h256 servicio_vs_directo max=0 medio=0 png_max=0 id=4bd8dbd120384ca2879dfcdbbc07de91
+[OK]    imagen 4000_laplaciano_k3_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    imagen 4000_laplaciano_k3_h256 servicio_vs_cuda_c max=0 medio=0 
+[OK]    imagen 4000_media_k9_h128 servicio_vs_directo max=0 medio=0 png_max=0 id=eb7a9d6f352f416aaa442a35a73ceb9c
+[OK]    imagen 4000_media_k9_h128 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    imagen 4000_media_k9_h128 servicio_vs_cuda_c max=0 medio=0 
+[OK]    imagen 4000_media_k9_h512 servicio_vs_directo max=0 medio=0 png_max=0 id=79bd11f47ca84909bee7b1360eac7283
+[OK]    imagen 4000_media_k9_h512 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    imagen 4000_media_k9_h512 servicio_vs_cuda_c max=0 medio=0 
+[OK]    imagen 6000_media_k9_h256 servicio_vs_directo max=0 medio=0 png_max=0 id=6e303dd8c87f4c759316ab25cf6ac962
+[OK]    imagen 6000_media_k9_h256 servicio_vs_c_secuencial max=0 medio=0 
+[OK]    imagen 6000_media_k9_h256 servicio_vs_cuda_c max=0 medio=0 
+== evidencia visual
+[OK]    visual recortes_2000 original, media 3, 9, 21, nitidez, laplaciano; region 300x300 en (900,900)
+== entradas invalidas
+[OK]    invalidas archivo_no_valido 415 archivo_invalido el archivo no es una imagen valida (UnidentifiedImageError)
+[OK]    invalidas archivo_grande 413 conexion cerrada URLError 
+[OK]    invalidas filtro_desconocido 400 filtro_desconocido filtro desconocido 'sobel'; use uno de: media, nitidez, laplaciano, personalizada
+[OK]    invalidas mascara_no_permitida 400 mascara_no_permitida tamano de mascara 4 no permitido; debe ser impar entre 3 y 31
+[OK]    invalidas hilos_no_permitidos 400 parametro_invalido hilos por bloque 100 no permitido; use uno de: (32, 64, 128, 256, 512, 1024)
+[OK]    invalidas recuperacion 200 ok 
+== aislamiento
+[OK]    aislamiento A id=0332cfed05c94653b4ba8eb66e593517 tamano=(96, 64) centro=40.0
+[OK]    aislamiento B id=2f668992453b4622b80e9ac9a704e9bd tamano=(48, 80) centro=200.0
+[OK]    aislamiento ids_distintos 
+== cola llena
+[OK]    cola rafaga_8 max_cola=4 200=5 503=3 otros=0 recupera=True
+
+231 pruebas, 0 fallos -> /datos/experimentos/validacion_servicio.csv
+TODO OK

@@ -1,0 +1,2 @@
+CONTAINER ID   IMAGE                    COMMAND                  CREATED         STATUS                            PORTS                                         NAMES
+684cf6f9784e   convolucion-pycuda:0.3   "/opt/nvidia/nvidia_ΓÇª"   3 seconds ago   Up 2 seconds (health: starting)   0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp   convolucion

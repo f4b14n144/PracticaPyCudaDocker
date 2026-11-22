@@ -1,0 +1,753 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.4.3
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+172.17.0.1 - - [22/Nov/2026:10:10:03 +0000] "GET /api/salud HTTP/1.1" 200 363 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.9818"
+172.17.0.1 - - [22/Nov/2026:10:10:04 +0000] "GET /api/salud HTTP/1.1" 200 363 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.9818"
+172.17.0.1 - - [22/Nov/2026:10:10:05 +0000] "GET /api/salud HTTP/1.1" 200 363 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.9818"
+172.17.0.1 - - [22/Nov/2026:10:10:06 +0000] "GET /api/salud HTTP/1.1" 200 363 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:06 +0000] "POST /api/procesar HTTP/1.1" 200 2720 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:06 +0000] "GET /api/resultados/2865e4b1468f4f0ea389fd5d82c45f82.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:06 +0000] "POST /api/procesar HTTP/1.1" 200 2721 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:06 +0000] "GET /api/resultados/881a10500d854b958a01d057cb154119.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+docker : [2026-11-22 10:10:02 +0000] [1] [INFO] Starting gunicorn 23.0.0
+At C:\Users\fabia\Downloads\pycuda-flask\pycuda-flask\correr_p03.ps1:67 char:1
++ docker logs convolucion *> "$ev\servicio.log"
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([2026-11-22 10:...gunicorn 23.0.0:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2026-11-22 10:10:02 +0000] [1] [INFO] Listening at: http://0.0.0.0:5000 (1)
+[2026-11-22 10:10:02 +0000] [1] [INFO] Using worker: gthread
+[2026-11-22 10:10:02 +0000] [28] [INFO] Booting worker with pid: 28
+2026-11-22 10:10:03,979 INFO [motor] GPU lista: {'dispositivo': 'NVIDIA GeForce RTX 5060 Laptop GPU', 'memoria_mib': 
+8123, 'max_hilos_por_bloque': 1024, 'inicio_contexto_ms': 372.6881750000075, 'inicio_compilacion_ms': 
+975.6504140000288, 'inicio_total_ms': 1388.1018209999922}
+2026-11-22 10:10:06,446 INFO [servicio] solicitud 2865e4b1468f4f0ea389fd5d82c45f82 ok: media k=9 2000x2000 
+kernel=4.167 ms servidor=209.4 ms
+2026-11-22 10:10:06,641 INFO [servicio] solicitud 881a10500d854b958a01d057cb154119 ok: media k=9 2000x2000 
+kernel=0.818 ms servidor=150.6 ms
+2026-11-22 10:10:07,127 INFO [servicio] solicitud e952aa0072454ffbbcee7f7426ccae01 ok: media k=9 2000x2000 
+kernel=0.503 ms servidor=426.5 ms
+172.17.0.1 - - [22/Nov/2026:10:10:07 +0000] "POST /api/procesar HTTP/1.1" 200 2720 "-" "Python-urllib/3.14"
+2026-11-22 10:10:07,323 INFO [servicio] solicitud 1f9af0eba40d4e5d83345cab5b550904 ok: media k=9 2000x2000 
+kernel=0.565 ms servidor=156.2 ms
+172.17.0.1 - - [22/Nov/2026:10:10:07 +0000] "GET /api/resultados/e952aa0072454ffbbcee7f7426ccae01.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+127.0.0.1 - - [22/Nov/2026:10:10:07 +0000] "GET /api/salud HTTP/1.1" 200 363 "-" "Python-urllib/3.12"
+172.17.0.1 - - [22/Nov/2026:10:10:07 +0000] "POST /api/procesar HTTP/1.1" 200 2717 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:07 +0000] "GET /api/resultados/1f9af0eba40d4e5d83345cab5b550904.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:07 +0000] "POST /api/procesar HTTP/1.1" 200 2717 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:07 +0000] "GET /api/resultados/4ac4f79b1f8b498e99697a5c7b4e22c0.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:07 +0000] "POST /api/procesar HTTP/1.1" 200 2721 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:07 +0000] "GET /api/resultados/10814a02fcf84b31b6e3923a920830db.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:09 +0000] "POST /api/procesar HTTP/1.1" 200 2724 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:09 +0000] "GET /api/resultados/a082020bd85e4604a0eef3c556c76731.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:09 +0000] "POST /api/procesar HTTP/1.1" 200 2723 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:09 +0000] "GET /api/resultados/037e27d46cb747be9ec42f95961cfb03.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:10 +0000] "POST /api/procesar HTTP/1.1" 200 2724 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:10 +0000] "GET /api/resultados/03fafcd36c6243a1ba6b85616e9003ce.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:11 +0000] "POST /api/procesar HTTP/1.1" 200 2725 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:11 +0000] "GET /api/resultados/1f8ed98460804beb8cabe3b7530fa362.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:12 +0000] "POST /api/procesar HTTP/1.1" 200 2726 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:12 +0000] "GET /api/resultados/e4058b21e9a64a02824a02177fd17f32.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:13 +0000] "POST /api/procesar HTTP/1.1" 200 2728 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:13 +0000] "GET /api/resultados/6c47d41c312c4fbf800b0628c2b106ac.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:15 +0000] "POST /api/procesar HTTP/1.1" 200 2729 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:15 +0000] "GET /api/resultados/76726a9ea980456bb1d78ee6ca3c8834.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:17 +0000] "POST /api/procesar HTTP/1.1" 200 2731 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:17 +0000] "GET /api/resultados/e112f46dae11482ca068b3f67dbcf770.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+2026-11-22 10:10:07,573 INFO [servicio] solicitud 4ac4f79b1f8b498e99697a5c7b4e22c0 ok: media k=9 2000x2000 
+kernel=0.677 ms servidor=188.9 ms
+2026-11-22 10:10:07,950 INFO [servicio] solicitud 10814a02fcf84b31b6e3923a920830db ok: media k=9 2000x2000 
+kernel=0.528 ms servidor=332.1 ms
+2026-11-22 10:10:09,069 INFO [servicio] solicitud a082020bd85e4604a0eef3c556c76731 ok: media k=9 4000x4000 
+kernel=1.912 ms servidor=1025.5 ms
+2026-11-22 10:10:09,789 INFO [servicio] solicitud 037e27d46cb747be9ec42f95961cfb03 ok: media k=9 4000x4000 
+kernel=2.148 ms servidor=672.4 ms
+172.17.0.1 - - [22/Nov/2026:10:10:19 +0000] "POST /api/procesar HTTP/1.1" 200 2730 "-" "Python-urllib/3.14"
+2026-11-22 10:10:10,513 INFO [servicio] solicitud 03fafcd36c6243a1ba6b85616e9003ce ok: media k=9 4000x4000 
+kernel=7.588 ms servidor=661.7 ms
+2026-11-22 10:10:11,490 INFO [servicio] solicitud 1f8ed98460804beb8cabe3b7530fa362 ok: media k=9 4000x4000 
+kernel=14.681 ms servidor=904.5 ms
+2026-11-22 10:10:12,276 INFO [servicio] solicitud e4058b21e9a64a02824a02177fd17f32 ok: media k=9 4000x4000 
+kernel=14.468 ms servidor=742.0 ms
+2026-11-22 10:10:13,328 INFO [servicio] solicitud 6c47d41c312c4fbf800b0628c2b106ac ok: media k=9 4000x4000 
+kernel=14.484 ms servidor=1006.2 ms
+2026-11-22 10:10:15,566 INFO [servicio] solicitud 76726a9ea980456bb1d78ee6ca3c8834 ok: media k=9 6000x6000 
+kernel=32.980 ms servidor=2121.3 ms
+2026-11-22 10:10:17,550 INFO [servicio] solicitud e112f46dae11482ca068b3f67dbcf770 ok: media k=9 6000x6000 
+kernel=32.828 ms servidor=1909.1 ms
+2026-11-22 10:10:19,621 INFO [servicio] solicitud 6de6ffbcf6b344bebd0b24864ce9ff93 ok: media k=9 6000x6000 
+kernel=30.564 ms servidor=1964.7 ms
+2026-11-22 10:10:21,886 INFO [servicio] solicitud 7f1ecfb04bbc4b2d80a01dd72c21b2cd ok: media k=9 6000x6000 
+kernel=35.997 ms servidor=2189.8 ms
+2026-11-22 10:10:23,937 INFO [servicio] solicitud b3e29ebeeccf4c1c8ddb5ac1df49f8b1 ok: media k=9 6000x6000 
+kernel=32.857 ms servidor=1972.9 ms
+2026-11-22 10:10:26,026 INFO [servicio] solicitud 5e6a3487510547b2bf1fb40a1f19d7dc ok: media k=9 6000x6000 
+kernel=32.761 ms servidor=2032.0 ms
+2026-11-22 10:10:26,919 INFO [servicio] solicitud a37e9f37f17542fb8b11bf98074db2da ok: media k=3 4000x4000 
+kernel=4.202 ms servidor=850.5 ms
+2026-11-22 10:10:27,816 INFO [servicio] solicitud 085c4ce3a2874db7b09fad911482dc3f ok: media k=3 4000x4000 
+kernel=7.306 ms servidor=828.7 ms
+2026-11-22 10:10:29,471 INFO [servicio] solicitud a2dc7a1a5a894112b95a952f434cc40e ok: media k=3 4000x4000 
+kernel=7.227 ms servidor=1581.2 ms
+172.17.0.1 - - [22/Nov/2026:10:10:19 +0000] "GET /api/resultados/6de6ffbcf6b344bebd0b24864ce9ff93.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:21 +0000] "POST /api/procesar HTTP/1.1" 200 2730 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:21 +0000] "GET /api/resultados/7f1ecfb04bbc4b2d80a01dd72c21b2cd.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:23 +0000] "POST /api/procesar HTTP/1.1" 200 2729 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:23 +0000] "GET /api/resultados/b3e29ebeeccf4c1c8ddb5ac1df49f8b1.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:26 +0000] "POST /api/procesar HTTP/1.1" 200 2732 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:26 +0000] "GET /api/resultados/5e6a3487510547b2bf1fb40a1f19d7dc.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:26 +0000] "POST /api/procesar HTTP/1.1" 200 1168 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:26 +0000] "GET /api/resultados/a37e9f37f17542fb8b11bf98074db2da.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:27 +0000] "POST /api/procesar HTTP/1.1" 200 1168 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:27 +0000] "GET /api/resultados/085c4ce3a2874db7b09fad911482dc3f.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:29 +0000] "POST /api/procesar HTTP/1.1" 200 1169 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:29 +0000] "GET /api/resultados/a2dc7a1a5a894112b95a952f434cc40e.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:31 +0000] "POST /api/procesar HTTP/1.1" 200 1170 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:31 +0000] "GET /api/resultados/c109a47266ea4901945a10b59c57122f.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:32 +0000] "POST /api/procesar HTTP/1.1" 200 1169 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:32 +0000] "GET /api/resultados/bbc2b4492e72481595f2b7ba1c9a0b0e.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:33 +0000] "POST /api/procesar HTTP/1.1" 200 1169 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:33 +0000] "GET /api/resultados/3d73615031b04b7d9efac0bfd7998e46.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:34 +0000] "POST /api/procesar HTTP/1.1" 200 2726 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:34 +0000] "GET /api/resultados/8a91c1d0ce2f4625a55f56800702e801.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+2026-11-22 10:10:31,083 INFO [servicio] solicitud c109a47266ea4901945a10b59c57122f ok: media k=3 4000x4000 
+kernel=7.155 ms servidor=1520.6 ms
+2026-11-22 10:10:32,381 INFO [servicio] solicitud bbc2b4492e72481595f2b7ba1c9a0b0e ok: media k=3 4000x4000 
+kernel=7.186 ms servidor=1230.1 ms
+2026-11-22 10:10:33,756 INFO [servicio] solicitud 3d73615031b04b7d9efac0bfd7998e46 ok: media k=3 4000x4000 
+kernel=7.556 ms servidor=1276.6 ms
+2026-11-22 10:10:34,772 INFO [servicio] solicitud 8a91c1d0ce2f4625a55f56800702e801 ok: media k=9 4000x4000 
+kernel=14.609 ms servidor=940.0 ms
+2026-11-22 10:10:35,633 INFO [servicio] solicitud 6080f31012a548a6b3a389a493d20cb7 ok: media k=9 4000x4000 
+kernel=14.528 ms servidor=805.3 ms
+2026-11-22 10:10:36,523 INFO [servicio] solicitud 2c02fc5cfeed454aad376ff6ad4ada7b ok: media k=9 4000x4000 
+kernel=14.410 ms servidor=834.7 ms
+2026-11-22 10:10:37,360 INFO [servicio] solicitud a0587bdc154641a2b71a759e24b9dc87 ok: media k=9 4000x4000 
+kernel=14.506 ms servidor=772.2 ms
+2026-11-22 10:10:38,242 INFO [servicio] solicitud 1315cddd8d5b474ea350336b5ca83c9a ok: media k=9 4000x4000 
+kernel=14.350 ms servidor=791.1 ms
+2026-11-22 10:10:39,086 INFO [servicio] solicitud d34043999591433e8aa5e9a82b5eea87 ok: media k=9 4000x4000 
+kernel=14.659 ms servidor=786.2 ms
+2026-11-22 10:10:39,983 INFO [servicio] solicitud 612d9e89bd04414db8280c69a1ccf5c1 ok: media k=21 4000x4000 
+kernel=20.555 ms servidor=819.7 ms
+2026-11-22 10:10:40,798 INFO [servicio] solicitud 3d17ad542c3345a78fdab1f6f10d661d ok: media k=21 4000x4000 
+kernel=20.455 ms servidor=745.7 ms
+2026-11-22 10:10:41,923 INFO [servicio] solicitud bc580186fb3045479c008a8c98496006 ok: media k=21 4000x4000 
+kernel=20.452 ms servidor=1068.2 ms
+2026-11-22 10:10:43,303 INFO [servicio] solicitud f01aa0000db948509249917ba3fb07d1 ok: media k=21 4000x4000 
+kernel=20.864 ms servidor=1306.5 ms
+2026-11-22 10:10:44,891 INFO [servicio] solicitud ec1bfdf866514639963f9e71dbb7a7f4 ok: media k=21 4000x4000 
+kernel=20.660 ms servidor=1503.4 ms
+2026-11-22 10:10:46,406 INFO [servicio] solicitud f3cd4fd7792e4a8b8ce526e5c096320d ok: media k=21 4000x4000 
+kernel=20.871 ms servidor=1421.3 ms
+2026-11-22 10:10:48,694 INFO [servicio] solicitud eaa323e2e2e0473db427b0b5ba5a20b3 ok: nitidez k=3 4000x4000 
+kernel=7.536 ms servidor=2228.6 ms
+2026-11-22 10:10:50,606 INFO [servicio] solicitud 95696efd62c54f9abb40b5fc25defd6b ok: nitidez k=3 4000x4000 
+kernel=7.308 ms servidor=1815.5 ms
+2026-11-22 10:10:52,756 INFO [servicio] solicitud 214a9f33554b45fba0376e6cfce6b28d ok: nitidez k=3 4000x4000 
+kernel=7.231 ms servidor=2052.3 ms
+172.17.0.1 - - [22/Nov/2026:10:10:35 +0000] "POST /api/procesar HTTP/1.1" 200 2725 "-" "Python-urllib/3.14"
+2026-11-22 10:10:54,046 INFO [servicio] solicitud ba0e988bf5f8414ea4ebe315f30632f8 ok: nitidez k=3 4000x4000 
+kernel=7.369 ms servidor=1214.1 ms
+172.17.0.1 - - [22/Nov/2026:10:10:35 +0000] "GET /api/resultados/6080f31012a548a6b3a389a493d20cb7.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:36 +0000] "POST /api/procesar HTTP/1.1" 200 2728 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:36 +0000] "GET /api/resultados/2c02fc5cfeed454aad376ff6ad4ada7b.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:37 +0000] "POST /api/procesar HTTP/1.1" 200 2726 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:37 +0000] "GET /api/resultados/a0587bdc154641a2b71a759e24b9dc87.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+127.0.0.1 - - [22/Nov/2026:10:10:37 +0000] "GET /api/salud HTTP/1.1" 200 364 "-" "Python-urllib/3.12"
+172.17.0.1 - - [22/Nov/2026:10:10:38 +0000] "POST /api/procesar HTTP/1.1" 200 2727 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:38 +0000] "GET /api/resultados/1315cddd8d5b474ea350336b5ca83c9a.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:39 +0000] "POST /api/procesar HTTP/1.1" 200 2725 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:39 +0000] "GET /api/resultados/d34043999591433e8aa5e9a82b5eea87.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:39 +0000] "POST /api/procesar HTTP/1.1" 200 10752 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:40 +0000] "GET /api/resultados/612d9e89bd04414db8280c69a1ccf5c1.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:40 +0000] "POST /api/procesar HTTP/1.1" 200 10752 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:40 +0000] "GET /api/resultados/3d17ad542c3345a78fdab1f6f10d661d.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:41 +0000] "POST /api/procesar HTTP/1.1" 200 10753 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:41 +0000] "GET /api/resultados/bc580186fb3045479c008a8c98496006.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:43 +0000] "POST /api/procesar HTTP/1.1" 200 10755 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:43 +0000] "GET /api/resultados/f01aa0000db948509249917ba3fb07d1.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:44 +0000] "POST /api/procesar HTTP/1.1" 200 10755 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:44 +0000] "GET /api/resultados/ec1bfdf866514639963f9e71dbb7a7f4.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:46 +0000] "POST /api/procesar HTTP/1.1" 200 10753 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:46 +0000] "GET /api/resultados/f3cd4fd7792e4a8b8ce526e5c096320d.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:48 +0000] "POST /api/procesar HTTP/1.1" 200 1048 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:48 +0000] "GET /api/resultados/eaa323e2e2e0473db427b0b5ba5a20b3.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:50 +0000] "POST /api/procesar HTTP/1.1" 200 1047 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:50 +0000] "GET /api/resultados/95696efd62c54f9abb40b5fc25defd6b.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:52 +0000] "POST /api/procesar HTTP/1.1" 200 1047 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:52 +0000] "GET /api/resultados/214a9f33554b45fba0376e6cfce6b28d.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:54 +0000] "POST /api/procesar HTTP/1.1" 200 1043 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:54 +0000] "GET /api/resultados/ba0e988bf5f8414ea4ebe315f30632f8.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:55 +0000] "POST /api/procesar HTTP/1.1" 200 1046 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:55 +0000] "GET /api/resultados/9d9387356dc541a8b7533eef696277c2.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:56 +0000] "POST /api/procesar HTTP/1.1" 200 1044 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:56 +0000] "GET /api/resultados/191305ae6bfd4d99a4e1ce01af2cc153.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:57 +0000] "POST /api/procesar HTTP/1.1" 200 1053 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:57 +0000] "GET /api/resultados/3699188a26de4db895c097eb77f82f54.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:10:59 +0000] "POST /api/procesar HTTP/1.1" 200 1053 "-" "Python-urllib/3.14"
+2026-11-22 10:10:55,323 INFO [servicio] solicitud 9d9387356dc541a8b7533eef696277c2 ok: nitidez k=3 4000x4000 
+kernel=7.170 ms servidor=1210.0 ms
+2026-11-22 10:10:56,419 INFO [servicio] solicitud 191305ae6bfd4d99a4e1ce01af2cc153 ok: nitidez k=3 4000x4000 
+kernel=7.158 ms servidor=1060.1 ms
+172.17.0.1 - - [22/Nov/2026:10:10:59 +0000] "GET /api/resultados/ee92b621534642ccb72f3397888c6da2.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:00 +0000] "POST /api/procesar HTTP/1.1" 200 1053 "-" "Python-urllib/3.14"
+2026-11-22 10:10:57,615 INFO [servicio] solicitud 3699188a26de4db895c097eb77f82f54 ok: laplaciano k=3 4000x4000 
+kernel=7.080 ms servidor=1124.5 ms
+2026-11-22 10:10:59,018 INFO [servicio] solicitud ee92b621534642ccb72f3397888c6da2 ok: laplaciano k=3 4000x4000 
+kernel=7.091 ms servidor=1324.1 ms
+172.17.0.1 - - [22/Nov/2026:10:11:00 +0000] "GET /api/resultados/5df46d8081b84ec0be4348d9f032c46f.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:02 +0000] "POST /api/procesar HTTP/1.1" 200 1056 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:02 +0000] "GET /api/resultados/bde719dd841f4092a1eb4d9deb93d3f4.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+2026-11-22 10:11:00,151 INFO [servicio] solicitud 5df46d8081b84ec0be4348d9f032c46f ok: laplaciano k=3 4000x4000 
+kernel=7.116 ms servidor=1046.7 ms
+2026-11-22 10:11:02,500 INFO [servicio] solicitud bde719dd841f4092a1eb4d9deb93d3f4 ok: laplaciano k=3 4000x4000 
+kernel=7.168 ms servidor=2261.0 ms
+2026-11-22 10:11:04,616 INFO [servicio] solicitud e0e96858f5af476ca3ee10c67b0cd5d5 ok: laplaciano k=3 4000x4000 
+kernel=7.465 ms servidor=2023.6 ms
+2026-11-22 10:11:06,823 INFO [servicio] solicitud d6bea802cde64437bb52bfe6bb11f23b ok: laplaciano k=3 4000x4000 
+kernel=7.493 ms servidor=2140.6 ms
+2026-11-22 10:11:07,998 INFO [servicio] solicitud 91de7d168baa4b41b73481ad14bbef7b ok: media k=9 4000x4000 
+kernel=14.414 ms servidor=1081.2 ms
+2026-11-22 10:11:08,872 INFO [servicio] solicitud 4384116556bd4a42b0ab58519804a6c8 ok: media k=9 4000x4000 
+kernel=14.560 ms servidor=788.4 ms
+2026-11-22 10:11:09,799 INFO [servicio] solicitud a170e3170245428b9b7664b7e3624764 ok: media k=9 4000x4000 
+kernel=14.399 ms servidor=856.5 ms
+2026-11-22 10:11:10,697 INFO [servicio] solicitud 1d8e1cdf31df486fb7c5c14a2bc94302 ok: media k=9 4000x4000 
+kernel=14.760 ms servidor=836.1 ms
+2026-11-22 10:11:11,565 INFO [servicio] solicitud d7f5d059edca4ecaa0b602cffe93da80 ok: media k=9 4000x4000 
+kernel=14.371 ms servidor=788.8 ms
+2026-11-22 10:11:12,641 INFO [servicio] solicitud 421ee06f9f994b99be2e4ceffc05ed51 ok: media k=9 4000x4000 
+kernel=20.249 ms servidor=1020.4 ms
+2026-11-22 10:11:13,554 INFO [servicio] solicitud bf073caee94748fbbce0253ec60dc47e ok: media k=9 4000x4000 
+kernel=14.541 ms servidor=844.3 ms
+2026-11-22 10:11:13,962 INFO [servicio] solicitud 4452163797ca466c9179061b1d6b6925 ok: media k=9 4000x4000 
+kernel=7.264 ms servidor=1246.9 ms
+2026-11-22 10:11:14,838 INFO [servicio] solicitud 5407b31970dd4d88a04f9127ec0ffc85 ok: media k=9 4000x4000 
+kernel=14.471 ms servidor=830.1 ms
+2026-11-22 10:11:15,406 INFO [servicio] solicitud fb99fc69c5b94a718b0912c3d4aa161a ok: media k=9 4000x4000 
+kernel=14.574 ms servidor=1370.5 ms
+2026-11-22 10:11:16,170 INFO [servicio] solicitud 71d92e1df3a94b0fbed5f9a832384bb1 ok: media k=9 4000x4000 
+kernel=18.092 ms servidor=677.6 ms
+2026-11-22 10:11:16,667 INFO [servicio] solicitud d284577206904759b224d477ff423195 ok: media k=9 4000x4000 
+kernel=14.410 ms servidor=1172.1 ms
+2026-11-22 10:11:17,549 INFO [servicio] solicitud 2019570005e54fe2ac00270a1c41cac8 ok: media k=9 4000x4000 
+kernel=14.542 ms servidor=783.2 ms
+2026-11-22 10:11:18,153 INFO [servicio] solicitud a05f835edda2412d89db9afeec045376 ok: media k=9 4000x4000 
+kernel=16.887 ms servidor=1388.0 ms
+2026-11-22 10:11:19,113 INFO [servicio] solicitud ad137e539ece4ede80bd691557d97f1c ok: media k=9 4000x4000 
+kernel=14.436 ms servidor=878.4 ms
+2026-11-22 10:11:20,162 INFO [servicio] solicitud 743d674b19fd4069aecb7c4d46deea8b ok: media k=9 4000x4000 
+kernel=14.415 ms servidor=1929.7 ms
+2026-11-22 10:11:39,833 INFO [servicio] solicitud fa3ffebf2dce4757ab3da6fd8b60569f ok: media k=3 3x3 kernel=0.068 ms 
+servidor=5.0 ms
+2026-11-22 10:11:39,850 INFO [servicio] solicitud 388ceb5ff99f483ab3d2c8ade5058f9d ok: media k=3 3x3 kernel=0.079 ms 
+servidor=6.2 ms
+2026-11-22 10:11:39,857 INFO [servicio] solicitud a7e981251915483aa80e84f107730642 ok: media k=3 3x3 kernel=0.195 ms 
+servidor=2.5 ms
+2026-11-22 10:11:39,873 INFO [servicio] solicitud d9e7397ef61b418aa1ee62a8e4e5ad26 ok: nitidez k=3 3x3 kernel=0.066 ms 
+servidor=2.3 ms
+2026-11-22 10:11:39,880 INFO [servicio] solicitud dff1de3905e64e5b9e55a81354c9f382 ok: nitidez k=3 3x3 kernel=0.004 ms 
+servidor=4.0 ms
+172.17.0.1 - - [22/Nov/2026:10:11:04 +0000] "POST /api/procesar HTTP/1.1" 200 1056 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:04 +0000] "GET /api/resultados/e0e96858f5af476ca3ee10c67b0cd5d5.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+2026-11-22 10:11:39,886 INFO [servicio] solicitud 4d15973e0e7d458b83cc0c2ebb0cc17b ok: nitidez k=3 3x3 kernel=0.048 ms 
+servidor=1.8 ms
+2026-11-22 10:11:39,899 INFO [servicio] solicitud 4bb4609ae9a2494bbd8b41f3c52e43d4 ok: laplaciano k=3 3x3 kernel=0.194 
+ms servidor=2.9 ms
+2026-11-22 10:11:39,905 INFO [servicio] solicitud 1773b122f7b341038962954a6bfaecf3 ok: laplaciano k=3 3x3 kernel=0.102 
+ms servidor=2.3 ms
+172.17.0.1 - - [22/Nov/2026:10:11:06 +0000] "POST /api/procesar HTTP/1.1" 200 1049 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:06 +0000] "GET /api/resultados/d6bea802cde64437bb52bfe6bb11f23b.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+2026-11-22 10:11:39,912 INFO [servicio] solicitud c5ebcbcbb2dd449c9cba6c00371b745e ok: laplaciano k=3 3x3 kernel=0.005 
+ms servidor=2.9 ms
+2026-11-22 10:11:39,933 INFO [servicio] solicitud 2590afd0175244ac960d0e0ea670b8a8 ok: media k=3 1x1 kernel=0.051 ms 
+servidor=4.6 ms
+127.0.0.1 - - [22/Nov/2026:10:11:07 +0000] "GET /api/salud HTTP/1.1" 200 363 "-" "Python-urllib/3.12"
+172.17.0.1 - - [22/Nov/2026:10:11:07 +0000] "POST /api/procesar HTTP/1.1" 200 2727 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:08 +0000] "GET /api/resultados/91de7d168baa4b41b73481ad14bbef7b.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:08 +0000] "POST /api/procesar HTTP/1.1" 200 2725 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:08 +0000] "GET /api/resultados/4384116556bd4a42b0ab58519804a6c8.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:09 +0000] "POST /api/procesar HTTP/1.1" 200 2727 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:09 +0000] "GET /api/resultados/a170e3170245428b9b7664b7e3624764.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:10 +0000] "POST /api/procesar HTTP/1.1" 200 2724 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:10 +0000] "GET /api/resultados/1d8e1cdf31df486fb7c5c14a2bc94302.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:11 +0000] "POST /api/procesar HTTP/1.1" 200 2724 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:11 +0000] "GET /api/resultados/d7f5d059edca4ecaa0b602cffe93da80.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:12 +0000] "POST /api/procesar HTTP/1.1" 200 2728 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:12 +0000] "GET /api/resultados/421ee06f9f994b99be2e4ceffc05ed51.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:13 +0000] "POST /api/procesar HTTP/1.1" 200 2725 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:13 +0000] "GET /api/resultados/bf073caee94748fbbce0253ec60dc47e.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:13 +0000] "POST /api/procesar HTTP/1.1" 200 2728 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:13 +0000] "GET /api/resultados/4452163797ca466c9179061b1d6b6925.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:14 +0000] "POST /api/procesar HTTP/1.1" 200 2722 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:14 +0000] "GET /api/resultados/5407b31970dd4d88a04f9127ec0ffc85.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:15 +0000] "POST /api/procesar HTTP/1.1" 200 2728 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:15 +0000] "GET /api/resultados/fb99fc69c5b94a718b0912c3d4aa161a.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:16 +0000] "POST /api/procesar HTTP/1.1" 200 2725 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:16 +0000] "GET /api/resultados/71d92e1df3a94b0fbed5f9a832384bb1.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:16 +0000] "POST /api/procesar HTTP/1.1" 200 2723 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:16 +0000] "GET /api/resultados/d284577206904759b224d477ff423195.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:17 +0000] "POST /api/procesar HTTP/1.1" 200 2727 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:17 +0000] "GET /api/resultados/2019570005e54fe2ac00270a1c41cac8.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:18 +0000] "POST /api/procesar HTTP/1.1" 200 2728 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:18 +0000] "GET /api/resultados/a05f835edda2412d89db9afeec045376.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:19 +0000] "POST /api/procesar HTTP/1.1" 200 2725 "-" "Python-urllib/3.14"
+172.17.0.1 - - [22/Nov/2026:10:11:19 +0000] "GET /api/resultados/ad137e539ece4ede80bd691557d97f1c.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+2026-11-22 10:11:39,941 INFO [servicio] solicitud cff2230b165748f5b35dbc35c0b7286a ok: media k=3 1x1 kernel=0.033 ms 
+servidor=2.5 ms
+2026-11-22 10:11:39,949 INFO [servicio] solicitud b90c3bb3e68941908522e323b63e3fca ok: media k=3 1x1 kernel=0.010 ms 
+servidor=3.4 ms
+172.17.0.1 - - [22/Nov/2026:10:11:20 +0000] "POST /api/procesar HTTP/1.1" 200 2728 "-" "Python-urllib/3.14"
+2026-11-22 10:11:39,962 INFO [servicio] solicitud 568d65bbea9847728b083ed57d34385a ok: media k=9 1x1 kernel=0.021 ms 
+servidor=2.7 ms
+2026-11-22 10:11:39,973 INFO [servicio] solicitud ec8a46dfa6824dcaaf0324f7e35b2aae ok: media k=9 1x1 kernel=0.148 ms 
+servidor=4.8 ms
+172.17.0.1 - - [22/Nov/2026:10:11:20 +0000] "GET /api/resultados/743d674b19fd4069aecb7c4d46deea8b.png HTTP/1.1" 200 0 "-" "Python-urllib/3.14"
+127.0.0.1 - - [22/Nov/2026:10:11:37 +0000] "GET /api/salud HTTP/1.1" 200 364 "-" "Python-urllib/3.12"
+2026-11-22 10:11:39,981 INFO [servicio] solicitud 28975c4a8aab423bac9c765146a6fe86 ok: media k=9 1x1 kernel=0.005 ms 
+servidor=3.1 ms
+2026-11-22 10:11:39,988 INFO [servicio] solicitud 58f90f637dc8491dbf4c5ae5f161e349 ok: media k=21 1x1 kernel=0.017 ms 
+servidor=2.6 ms
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 1209 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/fa3ffebf2dce4757ab3da6fd8b60569f.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+2026-11-22 10:11:39,996 INFO [servicio] solicitud 05b9bd6aa11d40bbbc2550b1da39f4aa ok: media k=21 1x1 kernel=0.025 ms 
+servidor=2.6 ms
+2026-11-22 10:11:40,006 INFO [servicio] solicitud b1471256532c4610894b40d44f06772b ok: media k=21 1x1 kernel=0.024 ms 
+servidor=1.5 ms
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 1210 "-" "Python-urllib/3.12"
+2026-11-22 10:11:40,019 INFO [servicio] solicitud 1c77ae8402d04bfeaa370909ce178070 ok: nitidez k=3 1x1 kernel=0.009 ms 
+servidor=4.3 ms
+2026-11-22 10:11:40,025 INFO [servicio] solicitud 7abd5f5ebd924b458590c1cfcdc2cd5c ok: nitidez k=3 1x1 kernel=0.083 ms 
+servidor=1.9 ms
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/388ceb5ff99f483ab3d2c8ade5058f9d.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 1209 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/a7e981251915483aa80e84f107730642.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 1072 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/d9e7397ef61b418aa1ee62a8e4e5ad26.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 1070 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/dff1de3905e64e5b9e55a81354c9f382.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 1070 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/4d15973e0e7d458b83cc0c2ebb0cc17b.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 1079 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/4bb4609ae9a2494bbd8b41f3c52e43d4.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 1079 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/1773b122f7b341038962954a6bfaecf3.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 1078 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/c5ebcbcbb2dd449c9cba6c00371b745e.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 1222 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/2590afd0175244ac960d0e0ea670b8a8.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 1222 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/cff2230b165748f5b35dbc35c0b7286a.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 1223 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/b90c3bb3e68941908522e323b63e3fca.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 2766 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/568d65bbea9847728b083ed57d34385a.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 2764 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/ec8a46dfa6824dcaaf0324f7e35b2aae.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 2765 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/28975c4a8aab423bac9c765146a6fe86.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 10793 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/58f90f637dc8491dbf4c5ae5f161e349.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "POST /api/procesar HTTP/1.1" 200 10792 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:39 +0000] "GET /api/resultados/05b9bd6aa11d40bbbc2550b1da39f4aa.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 10793 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/b1471256532c4610894b40d44f06772b.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1072 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/1c77ae8402d04bfeaa370909ce178070.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1074 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/7abd5f5ebd924b458590c1cfcdc2cd5c.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1074 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/af2dc84718f14ed0a8d81362a5c5fb96.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1082 "-" "Python-urllib/3.12"
+2026-11-22 10:11:40,033 INFO [servicio] solicitud af2dc84718f14ed0a8d81362a5c5fb96 ok: nitidez k=3 1x1 kernel=0.004 ms 
+servidor=5.5 ms
+2026-11-22 10:11:40,044 INFO [servicio] solicitud e7ffdb086bad4c98bda061f1b669e339 ok: laplaciano k=3 1x1 kernel=0.038 
+ms servidor=3.3 ms
+2026-11-22 10:11:40,052 INFO [servicio] solicitud 3f6e811d2421448ab3e16a47ea9a05ff ok: laplaciano k=3 1x1 kernel=0.023 
+ms servidor=3.8 ms
+2026-11-22 10:11:40,060 INFO [servicio] solicitud a55790e142c2428bbaa64ee068949dc2 ok: laplaciano k=3 1x1 kernel=0.006 
+ms servidor=3.3 ms
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/e7ffdb086bad4c98bda061f1b669e339.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1081 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/3f6e811d2421448ab3e16a47ea9a05ff.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1081 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/a55790e142c2428bbaa64ee068949dc2.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+2026-11-22 10:11:40,073 INFO [servicio] solicitud a4538869cc8d401c8775022da0e0668d ok: media k=3 7x5 kernel=0.047 ms 
+servidor=1.9 ms
+2026-11-22 10:11:40,080 INFO [servicio] solicitud d61c6144a7e5488da7c91eb4e3633196 ok: media k=3 7x5 kernel=0.020 ms 
+servidor=3.4 ms
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1210 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/a4538869cc8d401c8775022da0e0668d.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+2026-11-22 10:11:40,090 INFO [servicio] solicitud 1456887d8378421ebae7332ea380c033 ok: media k=3 7x5 kernel=0.022 ms 
+servidor=4.5 ms
+2026-11-22 10:11:40,102 INFO [servicio] solicitud 78072025249d4f3f82954585ddd6d14f ok: media k=9 7x5 kernel=0.025 ms 
+servidor=2.3 ms
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1208 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/d61c6144a7e5488da7c91eb4e3633196.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+2026-11-22 10:11:40,107 INFO [servicio] solicitud a75f4de71a7141d7ba78ca4d7c1f316f ok: media k=9 7x5 kernel=0.071 ms 
+servidor=2.3 ms
+2026-11-22 10:11:40,114 INFO [servicio] solicitud 203a2c4ed6984168a26f51d0bd3163b7 ok: media k=9 7x5 kernel=0.009 ms 
+servidor=2.2 ms
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1209 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/1456887d8378421ebae7332ea380c033.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+2026-11-22 10:11:40,128 INFO [servicio] solicitud 538a0852607442518d3c112741078c0b ok: media k=21 7x5 kernel=0.009 ms 
+servidor=5.2 ms
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 2765 "-" "Python-urllib/3.12"
+2026-11-22 10:11:40,136 INFO [servicio] solicitud b13c33d8aa684899a25ce82fcf23cfd8 ok: media k=21 7x5 kernel=0.035 ms 
+servidor=3.3 ms
+2026-11-22 10:11:40,143 INFO [servicio] solicitud 67803c62423748d4926a23da6c5b3c73 ok: media k=21 7x5 kernel=0.031 ms 
+servidor=3.1 ms
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/78072025249d4f3f82954585ddd6d14f.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 2766 "-" "Python-urllib/3.12"
+2026-11-22 10:11:40,158 INFO [servicio] solicitud ba6bde2d43ac4250ada3c19b5ae68189 ok: nitidez k=3 7x5 kernel=0.021 ms 
+servidor=3.9 ms
+2026-11-22 10:11:40,164 INFO [servicio] solicitud 93b6ceba4419424c97fc85a54c5fb260 ok: nitidez k=3 7x5 kernel=0.025 ms 
+servidor=2.8 ms
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/a75f4de71a7141d7ba78ca4d7c1f316f.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 2765 "-" "Python-urllib/3.12"
+2026-11-22 10:11:40,172 INFO [servicio] solicitud 20a397916fc44a0a8374e8c3efaa32e1 ok: nitidez k=3 7x5 kernel=0.107 ms 
+servidor=3.5 ms
+2026-11-22 10:11:40,188 INFO [servicio] solicitud 40a498bd3c2a4f62bcb493562ebba92f ok: laplaciano k=3 7x5 kernel=0.012 
+ms servidor=4.0 ms
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/203a2c4ed6984168a26f51d0bd3163b7.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 10790 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/538a0852607442518d3c112741078c0b.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 10790 "-" "Python-urllib/3.12"
+2026-11-22 10:11:40,197 INFO [servicio] solicitud 89f09400f1494adba24c3e4bb9239aa5 ok: laplaciano k=3 7x5 kernel=0.010 
+ms servidor=4.0 ms
+2026-11-22 10:11:40,206 INFO [servicio] solicitud 4591f530d59e4c62b261bbb49fd4fb3a ok: laplaciano k=3 7x5 kernel=0.023 
+ms servidor=4.5 ms
+2026-11-22 10:11:40,222 INFO [servicio] solicitud f0c2161daa3340b58178de1bd865cbbb ok: media k=3 513x1 kernel=0.010 ms 
+servidor=4.3 ms
+2026-11-22 10:11:40,229 INFO [servicio] solicitud 19e14ce524fd43c4b609b535c5998c45 ok: media k=3 513x1 kernel=0.008 ms 
+servidor=3.3 ms
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/b13c33d8aa684899a25ce82fcf23cfd8.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 10791 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/67803c62423748d4926a23da6c5b3c73.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1073 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/ba6bde2d43ac4250ada3c19b5ae68189.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1074 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/93b6ceba4419424c97fc85a54c5fb260.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1074 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/20a397916fc44a0a8374e8c3efaa32e1.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1078 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/40a498bd3c2a4f62bcb493562ebba92f.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1081 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/89f09400f1494adba24c3e4bb9239aa5.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1080 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/4591f530d59e4c62b261bbb49fd4fb3a.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1224 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/f0c2161daa3340b58178de1bd865cbbb.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1224 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/19e14ce524fd43c4b609b535c5998c45.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1224 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/cd29ee3f8bde4a7eabca571b4259c2ac.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 2768 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/0811f46aec5545e0b35963d66f13aac4.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 2768 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/190589fe93eb47f38f909efe80c48be9.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 2768 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/7d082297f3854f3495b838a092c5f678.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 10793 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/3bc2bce637cc4ea28a5113e051561b3b.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 10793 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/493b5850de4c47a5a90069b669735433.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 10792 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/3a91626c025340e4a88d1257c0f0a876.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+2026-11-22 10:11:40,239 INFO [servicio] solicitud cd29ee3f8bde4a7eabca571b4259c2ac ok: media k=3 513x1 kernel=0.022 ms 
+servidor=6.5 ms
+2026-11-22 10:11:40,256 INFO [servicio] solicitud 0811f46aec5545e0b35963d66f13aac4 ok: media k=9 513x1 kernel=0.009 ms 
+servidor=3.9 ms
+2026-11-22 10:11:40,269 INFO [servicio] solicitud 190589fe93eb47f38f909efe80c48be9 ok: media k=9 513x1 kernel=0.171 ms 
+servidor=5.9 ms
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1076 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/d6a6a713426b4eefaca7f09374036341.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1075 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/842a35fe114e4e7e9748094c221a4d9d.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+2026-11-22 10:11:40,276 INFO [servicio] solicitud 7d082297f3854f3495b838a092c5f678 ok: media k=9 513x1 kernel=0.007 ms 
+servidor=3.9 ms
+2026-11-22 10:11:40,295 INFO [servicio] solicitud 3bc2bce637cc4ea28a5113e051561b3b ok: media k=21 513x1 kernel=0.015 
+ms servidor=5.0 ms
+2026-11-22 10:11:40,301 INFO [servicio] solicitud 493b5850de4c47a5a90069b669735433 ok: media k=21 513x1 kernel=0.022 
+ms servidor=1.7 ms
+2026-11-22 10:11:40,305 INFO [servicio] solicitud 3a91626c025340e4a88d1257c0f0a876 ok: media k=21 513x1 kernel=0.031 
+ms servidor=1.7 ms
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1075 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/9f4c1717535a41e49d61fadc18bc3d15.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1081 "-" "Python-urllib/3.12"
+2026-11-22 10:11:40,321 INFO [servicio] solicitud d6a6a713426b4eefaca7f09374036341 ok: nitidez k=3 513x1 kernel=0.068 
+ms servidor=5.9 ms
+2026-11-22 10:11:40,329 INFO [servicio] solicitud 842a35fe114e4e7e9748094c221a4d9d ok: nitidez k=3 513x1 kernel=0.004 
+ms servidor=3.8 ms
+2026-11-22 10:11:40,339 INFO [servicio] solicitud 9f4c1717535a41e49d61fadc18bc3d15 ok: nitidez k=3 513x1 kernel=0.006 
+ms servidor=3.3 ms
+2026-11-22 10:11:40,354 INFO [servicio] solicitud 6fdc97226706480fb8b1fa0ccc2b42ee ok: laplaciano k=3 513x1 
+kernel=0.007 ms servidor=2.8 ms
+2026-11-22 10:11:40,361 INFO [servicio] solicitud f34b7ec8cbbb4c0a8f3dbef15b451620 ok: laplaciano k=3 513x1 
+kernel=0.033 ms servidor=3.4 ms
+2026-11-22 10:11:40,369 INFO [servicio] solicitud cc82b458632a430d8ba8f2801b36fd35 ok: laplaciano k=3 513x1 
+kernel=0.034 ms servidor=2.4 ms
+2026-11-22 10:11:40,381 INFO [servicio] solicitud b4fc3f1b046c4473bf63dce9386e0396 ok: media k=3 1x257 kernel=0.028 ms 
+servidor=3.0 ms
+2026-11-22 10:11:40,388 INFO [servicio] solicitud ab7573c7b8bc494fb27137a6fe31dd66 ok: media k=3 1x257 kernel=0.004 ms 
+servidor=2.8 ms
+2026-11-22 10:11:40,395 INFO [servicio] solicitud 24f9d6a10d9e40daa244deaf7471c23b ok: media k=3 1x257 kernel=0.151 ms 
+servidor=3.1 ms
+2026-11-22 10:11:40,409 INFO [servicio] solicitud 842f2a8058d7425f8ca47e5dacacb38b ok: media k=9 1x257 kernel=0.046 ms 
+servidor=1.8 ms
+2026-11-22 10:11:40,416 INFO [servicio] solicitud 7f3b7d18b1494de888c703ecfd340a46 ok: media k=9 1x257 kernel=0.007 ms 
+servidor=3.2 ms
+2026-11-22 10:11:40,426 INFO [servicio] solicitud 0e7db44bc9cb4f43ac696923a49f2845 ok: media k=9 1x257 kernel=0.037 ms 
+servidor=4.0 ms
+2026-11-22 10:11:40,443 INFO [servicio] solicitud 5acca8c14c9c4377aa29fcfcaf7144b5 ok: media k=21 1x257 kernel=0.041 
+ms servidor=5.4 ms
+2026-11-22 10:11:40,454 INFO [servicio] solicitud 5bff860d0e7446899ac40063d8693368 ok: media k=21 1x257 kernel=0.041 
+ms servidor=3.7 ms
+2026-11-22 10:11:40,464 INFO [servicio] solicitud db1459e00394429c9231761f8187dc01 ok: media k=21 1x257 kernel=0.016 
+ms servidor=3.5 ms
+2026-11-22 10:11:40,483 INFO [servicio] solicitud f228377057c64282866042e652ba3744 ok: nitidez k=3 1x257 kernel=0.012 
+ms servidor=3.9 ms
+2026-11-22 10:11:40,491 INFO [servicio] solicitud ffb0a85f2f0442a68c661843b6c345b9 ok: nitidez k=3 1x257 kernel=0.070 
+ms servidor=3.2 ms
+2026-11-22 10:11:40,500 INFO [servicio] solicitud 408c2a3fbfa94539838411d2b9de5376 ok: nitidez k=3 1x257 kernel=0.035 
+ms servidor=3.9 ms
+2026-11-22 10:11:40,512 INFO [servicio] solicitud 526c817b1e3442569e07b06b8e100897 ok: laplaciano k=3 1x257 
+kernel=0.009 ms servidor=4.9 ms
+2026-11-22 10:11:40,519 INFO [servicio] solicitud b1aee7065ccd4aa690cf1f1ba69d40fa ok: laplaciano k=3 1x257 
+kernel=0.040 ms servidor=1.8 ms
+2026-11-22 10:11:40,526 INFO [servicio] solicitud 18e42b91153d49ef944eaf0f732c7df5 ok: laplaciano k=3 1x257 
+kernel=0.031 ms servidor=1.6 ms
+2026-11-22 10:11:41,039 INFO [servicio] solicitud 6131e8b1bfcc4d17a70574ebb71826e6 ok: media k=3 1001x777 kernel=0.157 
+ms servidor=105.9 ms
+2026-11-22 10:11:41,234 INFO [servicio] solicitud d2c49ccbfffa47c9a2140e290835d324 ok: media k=3 1001x777 kernel=0.272 
+ms servidor=50.6 ms
+2026-11-22 10:11:41,317 INFO [servicio] solicitud 9743609d45f94ad98dbb6003e1534643 ok: media k=3 1001x777 kernel=0.154 
+ms servidor=33.9 ms
+2026-11-22 10:11:41,500 INFO [servicio] solicitud 73a79813675a4f429057722ebb46d409 ok: media k=9 1001x777 kernel=0.218 
+ms servidor=31.7 ms
+2026-11-22 10:11:41,616 INFO [servicio] solicitud 50bcd01927574250bfbff845c96522b6 ok: media k=9 1001x777 kernel=0.204 
+ms servidor=28.3 ms
+2026-11-22 10:11:41,681 INFO [servicio] solicitud add7a96f644d494789645d417f35d121 ok: media k=9 1001x777 kernel=0.241 
+ms servidor=28.7 ms
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/6fdc97226706480fb8b1fa0ccc2b42ee.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1081 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/f34b7ec8cbbb4c0a8f3dbef15b451620.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1083 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/cc82b458632a430d8ba8f2801b36fd35.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1224 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/b4fc3f1b046c4473bf63dce9386e0396.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1223 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/ab7573c7b8bc494fb27137a6fe31dd66.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1223 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/24f9d6a10d9e40daa244deaf7471c23b.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 2768 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/842f2a8058d7425f8ca47e5dacacb38b.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 2767 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/7f3b7d18b1494de888c703ecfd340a46.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 2767 "-" "Python-urllib/3.12"
+2026-11-22 10:11:41,848 INFO [servicio] solicitud c9e9985731534773b2afad5db000448d ok: media k=21 1001x777 
+kernel=0.515 ms servidor=26.2 ms
+2026-11-22 10:11:41,907 INFO [servicio] solicitud e2701ab6116a4d1bb6289e577bb79271 ok: media k=21 1001x777 
+kernel=0.502 ms servidor=25.8 ms
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/0e7db44bc9cb4f43ac696923a49f2845.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 10789 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/5acca8c14c9c4377aa29fcfcaf7144b5.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 10791 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/5bff860d0e7446899ac40063d8693368.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 10793 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/db1459e00394429c9231761f8187dc01.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+2026-11-22 10:11:42,042 INFO [servicio] solicitud 5e1f3cea6eaa4f1e9e6a3dba6c94bf68 ok: media k=21 1001x777 
+kernel=0.520 ms servidor=70.2 ms
+2026-11-22 10:11:42,198 INFO [servicio] solicitud 28996db83d704962bd9d0adc8e4d78cc ok: nitidez k=3 1001x777 
+kernel=0.153 ms servidor=54.2 ms
+2026-11-22 10:11:42,270 INFO [servicio] solicitud 5819d3343e7246178a5bdd5b608f6c24 ok: nitidez k=3 1001x777 
+kernel=0.127 ms servidor=35.7 ms
+2026-11-22 10:11:42,374 INFO [servicio] solicitud a5e62e82334a407b8a281e8e59928cf7 ok: nitidez k=3 1001x777 
+kernel=0.128 ms servidor=38.7 ms
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1076 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/f228377057c64282866042e652ba3744.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1073 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/ffb0a85f2f0442a68c661843b6c345b9.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+2026-11-22 10:11:42,466 INFO [servicio] solicitud f58a1f6d901b4cd2947f81e8efe9768a ok: laplaciano k=3 1001x777 
+kernel=0.119 ms servidor=31.0 ms
+2026-11-22 10:11:42,626 INFO [servicio] solicitud af4c7c0750364ed7bdbb98131d4420c2 ok: laplaciano k=3 1001x777 
+kernel=0.387 ms servidor=65.0 ms
+2026-11-22 10:11:42,713 INFO [servicio] solicitud 38ec781e2cd4451d916b32c4e0880e1d ok: laplaciano k=3 1001x777 
+kernel=0.134 ms servidor=46.0 ms
+2026-11-22 10:11:43,141 INFO [servicio] solicitud 0e5d6334f85947e88273d2de6f709968 ok: media k=3 2000x2000 
+kernel=0.263 ms servidor=285.8 ms
+2026-11-22 10:11:44,413 INFO [servicio] solicitud d0c53e299329435bad502a975113fce8 ok: media k=9 2000x2000 
+kernel=0.572 ms servidor=232.5 ms
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1076 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/408c2a3fbfa94539838411d2b9de5376.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1078 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/526c817b1e3442569e07b06b8e100897.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+2026-11-22 10:11:45,568 INFO [servicio] solicitud cc2dae74cd4d48059304584f3b283e56 ok: media k=21 2000x2000 
+kernel=1.988 ms servidor=175.4 ms
+2026-11-22 10:11:46,762 INFO [servicio] solicitud 058f96721574449fa877bcef0d6a9ffc ok: nitidez k=3 2000x2000 
+kernel=0.294 ms servidor=311.1 ms
+2026-11-22 10:11:47,991 INFO [servicio] solicitud 745495aec53a4dd09a35daf59f3ad35e ok: laplaciano k=3 2000x2000 
+kernel=4.870 ms servidor=277.2 ms
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1083 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/b1aee7065ccd4aa690cf1f1ba69d40fa.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "POST /api/procesar HTTP/1.1" 200 1081 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:40 +0000] "GET /api/resultados/18e42b91153d49ef944eaf0f732c7df5.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:41 +0000] "POST /api/procesar HTTP/1.1" 200 1233 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:41 +0000] "GET /api/resultados/6131e8b1bfcc4d17a70574ebb71826e6.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:41 +0000] "POST /api/procesar HTTP/1.1" 200 1233 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:41 +0000] "GET /api/resultados/d2c49ccbfffa47c9a2140e290835d324.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:41 +0000] "POST /api/procesar HTTP/1.1" 200 1230 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:41 +0000] "GET /api/resultados/9743609d45f94ad98dbb6003e1534643.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:41 +0000] "POST /api/procesar HTTP/1.1" 200 2772 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:41 +0000] "GET /api/resultados/73a79813675a4f429057722ebb46d409.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:41 +0000] "POST /api/procesar HTTP/1.1" 200 2774 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:41 +0000] "GET /api/resultados/50bcd01927574250bfbff845c96522b6.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:41 +0000] "POST /api/procesar HTTP/1.1" 200 2775 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:41 +0000] "GET /api/resultados/add7a96f644d494789645d417f35d121.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:41 +0000] "POST /api/procesar HTTP/1.1" 200 10800 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:41 +0000] "GET /api/resultados/c9e9985731534773b2afad5db000448d.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:41 +0000] "POST /api/procesar HTTP/1.1" 200 10799 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:41 +0000] "GET /api/resultados/e2701ab6116a4d1bb6289e577bb79271.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:42 +0000] "POST /api/procesar HTTP/1.1" 200 10796 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:42 +0000] "GET /api/resultados/5e1f3cea6eaa4f1e9e6a3dba6c94bf68.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:42 +0000] "POST /api/procesar HTTP/1.1" 200 1084 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:42 +0000] "GET /api/resultados/28996db83d704962bd9d0adc8e4d78cc.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:42 +0000] "POST /api/procesar HTTP/1.1" 200 1084 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:42 +0000] "GET /api/resultados/5819d3343e7246178a5bdd5b608f6c24.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:42 +0000] "POST /api/procesar HTTP/1.1" 200 1081 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:42 +0000] "GET /api/resultados/a5e62e82334a407b8a281e8e59928cf7.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:42 +0000] "POST /api/procesar HTTP/1.1" 200 1089 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:42 +0000] "GET /api/resultados/f58a1f6d901b4cd2947f81e8efe9768a.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:42 +0000] "POST /api/procesar HTTP/1.1" 200 1089 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:42 +0000] "GET /api/resultados/af4c7c0750364ed7bdbb98131d4420c2.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:42 +0000] "POST /api/procesar HTTP/1.1" 200 1089 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:42 +0000] "GET /api/resultados/38ec781e2cd4451d916b32c4e0880e1d.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:43 +0000] "POST /api/procesar HTTP/1.1" 200 1228 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:43 +0000] "GET /api/resultados/0e5d6334f85947e88273d2de6f709968.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:43 +0000] "GET /api/resultados/0e5d6334f85947e88273d2de6f709968.png HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:44 +0000] "POST /api/procesar HTTP/1.1" 200 2769 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:44 +0000] "GET /api/resultados/d0c53e299329435bad502a975113fce8.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:44 +0000] "GET /api/resultados/d0c53e299329435bad502a975113fce8.png HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:45 +0000] "POST /api/procesar HTTP/1.1" 200 10794 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:45 +0000] "GET /api/resultados/cc2dae74cd4d48059304584f3b283e56.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:45 +0000] "GET /api/resultados/cc2dae74cd4d48059304584f3b283e56.png HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:46 +0000] "POST /api/procesar HTTP/1.1" 200 1088 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:46 +0000] "GET /api/resultados/058f96721574449fa877bcef0d6a9ffc.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+2026-11-22 10:11:51,491 INFO [servicio] solicitud 6978e83519104c62b017c44b449669b8 ok: media k=3 4000x4000 
+kernel=7.694 ms servidor=1952.4 ms
+2026-11-22 10:11:55,359 INFO [servicio] solicitud 2ca521905686407d91d9d7d3ec0a8b9d ok: media k=9 4000x4000 
+kernel=11.018 ms servidor=806.3 ms
+2026-11-22 10:11:59,569 INFO [servicio] solicitud d2c9d8f6ce774ebf939e32fa1e6aa86c ok: media k=21 4000x4000 
+kernel=20.187 ms servidor=1390.4 ms
+2026-11-22 10:12:04,864 INFO [servicio] solicitud 93aeaf04526c4eec9f0572bf93c3bbb3 ok: nitidez k=3 4000x4000 
+kernel=7.743 ms servidor=1400.9 ms
+2026-11-22 10:12:08,605 INFO [servicio] solicitud 4bd8dbd120384ca2879dfcdbbc07de91 ok: laplaciano k=3 4000x4000 
+kernel=7.414 ms servidor=1371.8 ms
+2026-11-22 10:12:12,077 INFO [servicio] solicitud eb7a9d6f352f416aaa442a35a73ceb9c ok: media k=9 4000x4000 
+kernel=14.536 ms servidor=929.5 ms
+127.0.0.1 - - [22/Nov/2026:10:11:46 +0000] "GET /api/resultados/058f96721574449fa877bcef0d6a9ffc.png HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:47 +0000] "POST /api/procesar HTTP/1.1" 200 1099 "-" "Python-urllib/3.12"
+2026-11-22 10:12:14,800 INFO [servicio] solicitud 79bd11f47ca84909bee7b1360eac7283 ok: media k=9 4000x4000 
+kernel=14.467 ms servidor=815.7 ms
+2026-11-22 10:12:20,890 INFO [servicio] solicitud 6e303dd8c87f4c759316ab25cf6ac962 ok: media k=9 6000x6000 
+kernel=17.494 ms servidor=3141.0 ms
+2026-11-22 10:12:29,315 WARNING [servicio] solicitud 8b7257cf37ba4ef5854c362a09dad088 -> 415 archivo_invalido: el 
+archivo no es una imagen valida (UnidentifiedImageError)
+2026-11-22 10:12:29,533 WARNING [servicio] solicitud None -> 413 archivo_grande: la solicitud supera el limite de 100 
+MiB
+2026-11-22 10:12:29,540 WARNING [servicio] solicitud 12f2d20fb8404439827950d446d9b737 -> 400 filtro_desconocido: 
+filtro desconocido 'sobel'; use uno de: media, nitidez, laplaciano, personalizada
+127.0.0.1 - - [22/Nov/2026:10:11:48 +0000] "GET /api/resultados/745495aec53a4dd09a35daf59f3ad35e.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:48 +0000] "GET /api/resultados/745495aec53a4dd09a35daf59f3ad35e.png HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+2026-11-22 10:12:29,543 WARNING [servicio] solicitud 342e6b972f264a56a4ebcda2f4cb597b -> 400 mascara_no_permitida: 
+tamano de mascara 4 no permitido; debe ser impar entre 3 y 31
+2026-11-22 10:12:29,544 WARNING [servicio] solicitud 76b91349c2a34696abdf5dd62c437d13 -> 400 parametro_invalido: hilos 
+por bloque 100 no permitido; use uno de: (32, 64, 128, 256, 512, 1024)
+127.0.0.1 - - [22/Nov/2026:10:11:51 +0000] "POST /api/procesar HTTP/1.1" 200 1221 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:51 +0000] "GET /api/resultados/6978e83519104c62b017c44b449669b8.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+2026-11-22 10:12:29,555 INFO [servicio] solicitud d84cbe1181d344e09b30fdc3efd39ee8 ok: media k=3 50x50 kernel=0.083 ms 
+servidor=9.7 ms
+2026-11-22 10:12:29,571 INFO [servicio] solicitud 0332cfed05c94653b4ba8eb66e593517 ok: media k=3 96x64 kernel=0.004 ms 
+servidor=10.2 ms
+127.0.0.1 - - [22/Nov/2026:10:11:51 +0000] "GET /api/resultados/6978e83519104c62b017c44b449669b8.png HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:55 +0000] "POST /api/procesar HTTP/1.1" 200 2777 "-" "Python-urllib/3.12"
+2026-11-22 10:12:29,571 INFO [servicio] solicitud 2f668992453b4622b80e9ac9a704e9bd ok: media k=3 48x80 kernel=0.004 ms 
+servidor=8.9 ms
+2026-11-22 10:12:31,199 WARNING [servicio] solicitud bee526506d5e4593aa8fabb1ce11f00d -> 503 cola_llena: hay 4 
+solicitudes en espera; intente de nuevo en unos segundos
+127.0.0.1 - - [22/Nov/2026:10:11:55 +0000] "GET /api/resultados/2ca521905686407d91d9d7d3ec0a8b9d.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:55 +0000] "GET /api/resultados/2ca521905686407d91d9d7d3ec0a8b9d.png HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+2026-11-22 10:12:31,199 WARNING [servicio] solicitud 958848c8d4174d6b969ef1b0417cdd9e -> 503 cola_llena: hay 4 
+solicitudes en espera; intente de nuevo en unos segundos
+2026-11-22 10:12:31,240 WARNING [servicio] solicitud 8d64998ae47b47ba8ffd5c79689a9d20 -> 503 cola_llena: hay 4 
+solicitudes en espera; intente de nuevo en unos segundos
+127.0.0.1 - - [22/Nov/2026:10:11:59 +0000] "POST /api/procesar HTTP/1.1" 200 10803 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:11:59 +0000] "GET /api/resultados/d2c9d8f6ce774ebf939e32fa1e6aa86c.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+2026-11-22 10:12:33,282 INFO [servicio] solicitud d3e2a12803db4766b389ad920730dddb ok: media k=21 6000x6000 
+kernel=45.235 ms servidor=3228.0 ms
+2026-11-22 10:12:35,575 INFO [servicio] solicitud ca259c33b78c4bc0a5341e54fcb3e00c ok: media k=21 6000x6000 
+kernel=45.685 ms servidor=5518.9 ms
+127.0.0.1 - - [22/Nov/2026:10:11:59 +0000] "GET /api/resultados/d2c9d8f6ce774ebf939e32fa1e6aa86c.png HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:04 +0000] "POST /api/procesar HTTP/1.1" 200 1096 "-" "Python-urllib/3.12"
+2026-11-22 10:12:35,870 INFO [servicio] solicitud 0282084a52fd4c19a98f55057182789f ok: media k=21 6000x6000 
+kernel=24.738 ms servidor=5796.7 ms
+2026-11-22 10:12:38,123 INFO [servicio] solicitud 2320592139a84a39bc23d36d7108809a ok: media k=21 6000x6000 
+kernel=45.290 ms servidor=8023.5 ms
+127.0.0.1 - - [22/Nov/2026:10:12:04 +0000] "GET /api/resultados/93aeaf04526c4eec9f0572bf93c3bbb3.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+2026-11-22 10:12:39,136 INFO [servicio] solicitud 70f7bcadb42448f69a01203aec3c00a4 ok: media k=21 6000x6000 
+kernel=25.315 ms servidor=9035.3 ms
+2026-11-22 10:12:39,154 INFO [servicio] solicitud f6fbe41355004af0a459bd273c4b0f84 ok: media k=3 20x20 kernel=0.010 ms 
+servidor=4.0 ms
+127.0.0.1 - - [22/Nov/2026:10:12:04 +0000] "GET /api/resultados/93aeaf04526c4eec9f0572bf93c3bbb3.png HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:07 +0000] "GET /api/salud HTTP/1.1" 200 365 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:08 +0000] "POST /api/procesar HTTP/1.1" 200 1105 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:08 +0000] "GET /api/resultados/4bd8dbd120384ca2879dfcdbbc07de91.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:08 +0000] "GET /api/resultados/4bd8dbd120384ca2879dfcdbbc07de91.png HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:12 +0000] "POST /api/procesar HTTP/1.1" 200 2777 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:12 +0000] "GET /api/resultados/eb7a9d6f352f416aaa442a35a73ceb9c.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:12 +0000] "GET /api/resultados/eb7a9d6f352f416aaa442a35a73ceb9c.png HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:14 +0000] "POST /api/procesar HTTP/1.1" 200 2775 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:14 +0000] "GET /api/resultados/79bd11f47ca84909bee7b1360eac7283.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:14 +0000] "GET /api/resultados/79bd11f47ca84909bee7b1360eac7283.png HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:20 +0000] "POST /api/procesar HTTP/1.1" 200 2785 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:21 +0000] "GET /api/resultados/6e303dd8c87f4c759316ab25cf6ac962.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:21 +0000] "GET /api/resultados/6e303dd8c87f4c759316ab25cf6ac962.png HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:29 +0000] "GET /api/config HTTP/1.1" 200 320 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:29 +0000] "POST /api/procesar HTTP/1.1" 415 152 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:29 +0000] "POST /api/procesar HTTP/1.1" 413 91 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:29 +0000] "POST /api/procesar HTTP/1.1" 400 176 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:29 +0000] "POST /api/procesar HTTP/1.1" 400 158 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:29 +0000] "POST /api/procesar HTTP/1.1" 400 171 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:29 +0000] "POST /api/procesar HTTP/1.1" 200 1176 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:29 +0000] "POST /api/procesar HTTP/1.1" 200 1212 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:29 +0000] "POST /api/procesar HTTP/1.1" 200 1212 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:29 +0000] "GET /api/resultados/0332cfed05c94653b4ba8eb66e593517.png HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:29 +0000] "GET /api/resultados/0332cfed05c94653b4ba8eb66e593517.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:29 +0000] "GET /api/resultados/2f668992453b4622b80e9ac9a704e9bd.png HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:29 +0000] "GET /api/resultados/2f668992453b4622b80e9ac9a704e9bd.f32 HTTP/1.1" 200 0 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:29 +0000] "GET /api/salud HTTP/1.1" 200 365 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:31 +0000] "POST /api/procesar HTTP/1.1" 503 149 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:31 +0000] "POST /api/procesar HTTP/1.1" 503 149 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:31 +0000] "POST /api/procesar HTTP/1.1" 503 149 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:33 +0000] "POST /api/procesar HTTP/1.1" 200 10757 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:35 +0000] "POST /api/procesar HTTP/1.1" 200 10758 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:35 +0000] "POST /api/procesar HTTP/1.1" 200 10760 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:37 +0000] "GET /api/salud HTTP/1.1" 200 364 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:38 +0000] "POST /api/procesar HTTP/1.1" 200 10761 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:39 +0000] "POST /api/procesar HTTP/1.1" 200 10758 "-" "Python-urllib/3.12"
+127.0.0.1 - - [22/Nov/2026:10:12:39 +0000] "POST /api/procesar HTTP/1.1" 200 1170 "-" "Python-urllib/3.12"
+172.17.0.1 - - [22/Nov/2026:10:12:40 +0000] "GET /api/salud HTTP/1.1" 200 365 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.9818"

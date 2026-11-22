@@ -1,0 +1,27 @@
+{
+  "anfitrion": "684cf6f9784e",
+  "en_contenedor": true,
+  "so": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "cpu": "x86_64",
+  "nucleos_logicos": 24,
+  "ram_gib": 15.31,
+  "python": "3.12.3",
+  "paquetes": {
+    "pycuda": "2026.1",
+    "numpy": "2.5.4",
+    "pillow": "13.0.0",
+    "flask": "3.1.3",
+    "werkzeug": "3.1.9",
+    "gunicorn": "23.0.0"
+  },
+  "commit": "bf2fc7d3b14099e4b39a34df6c4e4d366649844e",
+  "nvcc": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2026 NVIDIA Corporation\nBuilt on Tue_Sep_01_08:45:21_PDT_2026\nCuda compilation tools, release 13.4, V13.4.92\nBuild cuda_13.4.r13.4/compiler.38855100_0",
+  "nvidia_smi": "NVIDIA GeForce RTX 5060 Laptop GPU, 8151 MiB, 621.14",
+  "gpu": {
+    "nombre": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "memoria_mib": 8123,
+    "capacidad_computo": "12.0",
+    "cuda_controlador_anfitrion": "13.5",
+    "cuda_compilado_pycuda": "13.4.0"
+  }
+}

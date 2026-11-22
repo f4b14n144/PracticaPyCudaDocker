@@ -92,3 +92,13 @@ docker exec convolucion python3 -m herramientas.entorno --salida /datos/experime
 En los experimentos la repeticion 0 es calentamiento y no se cuenta, 256 hilos, 5 repeticiones (5 rondas en concurrencia).
 
 Fabian Mendoza y Joseph Wellesley
+
+## Resultados
+
+Corrido en una laptop ASUS ROG Strix G16 (Core Ultra 9 275HX, 32 GB, RTX 5060 Laptop 8 GB, driver 621.14, Windows 11 + Docker Desktop 4.99 con WSL2). La imagen se construyo desde un clone limpio del commit `bf2fc7d3b14099e4b39a34df6c4e4d366649844e` (imagen `sha256:998a2b32cdb4...`) y todas las mediciones son con ese commit, el siguiente commit solo agrega `experimentos/`.
+
+- `experimentos/validacion_servicio.csv` 231 pruebas, 0 fallos, error 0 contra C/C++, CUDA C y PyCUDA directo
+- `experimentos/servicio.csv`, `directo_anfitrion.csv`, `directo_contenedor.csv` mediciones crudas
+- `experimentos/resumen.csv` y `resumen.md` medianas e IQR
+- `experimentos/figuras/` original, salidas y recortes
+- `experimentos/evidencia/` build, imagen, nvidia-smi, salud, logs del servicio y entorno

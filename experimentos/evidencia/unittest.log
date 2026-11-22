@@ -1,0 +1,74 @@
+docker : test_invalidos (pruebas.test_servicio.TestDecodificar.test_invalidos) ... ok
+At C:\Users\fabia\Downloads\pycuda-flask\pycuda-flask\correr_p03.ps1:53 char:1
++ docker exec convolucion python3 -m unittest discover -s pruebas -t .  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_invalidos ...validos) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+test_png (pruebas.test_servicio.TestDecodificar.test_png) ... ok
+test_errores (pruebas.test_servicio.TestEspecificacion.test_errores) ... ok
+test_hilos (pruebas.test_servicio.TestEspecificacion.test_hilos) ... ok
+test_kernel_elegido (pruebas.test_servicio.TestEspecificacion.test_kernel_elegido) ... ok
+test_personalizada_valida (pruebas.test_servicio.TestEspecificacion.test_personalizada_valida) ... ok
+test_3x3_son_las_originales (pruebas.test_servicio.TestMascaras.test_3x3_son_las_originales) ... ok
+test_cruz_generalizada_k5 (pruebas.test_servicio.TestMascaras.test_cruz_generalizada_k5) ... ok
+test_media_k9 (pruebas.test_servicio.TestMascaras.test_media_k9) ... ok
+test_cola_llena (pruebas.test_servicio.TestMotor.test_cola_llena) ... ok
+test_enviar (pruebas.test_servicio.TestMotor.test_enviar) ... ok
+test_sin_gpu_no_cae_a_cpu (pruebas.test_servicio.TestMotor.test_sin_gpu_no_cae_a_cpu) ... No se pudo inicializar la 
+GPU: RuntimeError: sin GPU
+ok
+test_laplaciano_5_usa_kernel_mascara (pruebas.test_servicio.TestProcesar.test_laplaciano_5_usa_kernel_mascara) ... ok
+test_media_usa_kernel_original (pruebas.test_servicio.TestProcesar.test_media_usa_kernel_original) ... ok
+test_ajustes (pruebas.test_servicio.TestVisualizacion.test_ajustes) ... ok
+test_aislamiento (pruebas.test_servicio.TestWeb.test_aislamiento) ... /app/pruebas/test_servicio.py:216: 
+ResourceWarning: unclosed file <_io.BufferedReader name='/tmp/tmplsm9nxgq/9faa65640b3a4e8ea590be39309e1072.png'>
+  with Image.open(io.BytesIO(self.c.get(j["url_resultado"]).data)) as im:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/app/pruebas/test_servicio.py:216: ResourceWarning: unclosed file <_io.BufferedReader 
+name='/tmp/tmplsm9nxgq/f11c1fac2d914630859712eba5dbc4a2.png'>
+  with Image.open(io.BytesIO(self.c.get(j["url_resultado"]).data)) as im:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_errores_y_recuperacion (pruebas.test_servicio.TestWeb.test_errores_y_recuperacion) ... solicitud 
+8e7f0f62f547435992bad6acdb1e3494 -> 400 archivo_vacio: falta el campo 'imagen' (multipart/form-data)
+solicitud 0df2a05a8b87459c984bd271b6243d4d -> 415 archivo_invalido: el archivo no es una imagen valida 
+(UnidentifiedImageError)
+solicitud 73b7134481e64763884d922c510c2d58 -> 400 filtro_desconocido: filtro desconocido 'x'; use uno de: media, 
+nitidez, laplaciano, personalizada
+solicitud 85f657b0327947378c9168d4901d2bb9 -> 400 mascara_no_permitida: tamano de mascara 4 no permitido; debe ser 
+impar entre 3 y 31
+solicitud 45a375ce10034f1c8be1f92e1ae97cdb -> 413 dimensiones_excedidas: la imagen es 100x100; el maximo es 64 px por 
+lado y 1 MP en total
+solicitud 0974826c57f04d41b22a2ecf2493de59 -> 400 mascara_invalida: 'mascara' debe ser JSON, p. ej. 
+[[0,1,0],[1,-4,1],[0,1,0]]
+solicitud None -> 413 archivo_grande: la solicitud supera el limite de 1 MiB
+ok
+test_f32 (pruebas.test_servicio.TestWeb.test_f32) ... /app/pruebas/test_servicio.py:222: ResourceWarning: unclosed 
+file <_io.BufferedReader name='/tmp/tmplsm9nxgq/d2bfd007f4b34b3e98db57c5572fb9de.f32'>
+  self.assertEqual(len(self.c.get(j["url_f32"]).data), 6 * 4 * 4)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_procesar (pruebas.test_servicio.TestWeb.test_procesar) ... 
+/usr/local/lib/python3.12/dist-packages/werkzeug/local.py:296: ResourceWarning: unclosed file <_io.FileIO name=3 
+mode='rb+' closefd=True>
+  return partial(f, obj)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.12/unittest/case.py:589: ResourceWarning: unclosed file <_io.BufferedReader 
+name='/tmp/tmplsm9nxgq/4fa11762ba6546359eb38fc03499533f.png'>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_resultado_inexistente (pruebas.test_servicio.TestWeb.test_resultado_inexistente) ... solicitud None -> 404 
+no_encontrado: identificador de resultado invalido
+solicitud aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -> 404 no_encontrado: el resultado no existe o ya expiro
+ok
+test_salud_y_config (pruebas.test_servicio.TestWeb.test_salud_y_config) ... ok
+test_sin_gpu (pruebas.test_servicio.TestWeb.test_sin_gpu) ... No se pudo inicializar la GPU: RuntimeError: sin GPU
+solicitud 84adbe1f3b4742faa02e7e43e605af6f -> 503 gpu_no_disponible: no hay GPU CUDA utilizable: RuntimeError: sin GPU
+ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.092s
+
+OK

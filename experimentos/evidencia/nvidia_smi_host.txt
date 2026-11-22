@@ -1,0 +1,24 @@
+Sun Nov 22 05:07:10 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 621.14                 KMD Version: 621.14        CUDA UMD Version: 13.5     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 5060 ...  WDDM  |   00000000:02:00.0 Off |                  N/A |
+| N/A   51C    P8              4W /  100W |     182MiB /   8151MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            3328    C+G   ...Browser\Application\brave.exe      N/A      |
+|    0   N/A  N/A           10460    C+G   ...s\Win64\EpicGamesLauncher.exe      N/A      |
+|    0   N/A  N/A           13552    C+G   ...m Files (x86)\Steam\steam.exe      N/A      |
+|    0   N/A  N/A           30648    C+G   ...Browser\Application\brave.exe      N/A      |
+|    0   N/A  N/A           30976    C+G   ...ayRenderer-Win64-Shipping.exe      N/A      |
++-----------------------------------------------------------------------------------------+
