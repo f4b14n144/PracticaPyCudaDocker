@@ -3,6 +3,9 @@ import csv
 import json
 import threading
 import time
+import urllib.error
+import urllib.request
+import uuid
 from datetime import datetime
 from pathlib import Path
 
@@ -22,31 +25,43 @@ def leer(ruta):
     return _cache[ruta]
 
 
+def cuerpo_multipart(campos, nombre, datos):
+    limite = uuid.uuid4().hex
+    partes = [f'--{limite}\r\nContent-Disposition: form-data; name="{k}"\r\n\r\n{v}\r\n'.encode()
+              for k, v in campos.items()]
+    partes.append(f'--{limite}\r\nContent-Disposition: form-data; name="imagen"; filename="{nombre}"\r\n'
+                  f'Content-Type: image/png\r\n\r\n'.encode() + datos + b"\r\n")
+    partes.append(f"--{limite}--\r\n".encode())
+    return b"".join(partes), f"multipart/form-data; boundary={limite}"
+
+
 def solicitud(sesion, url, ruta, filtro, k, hilos):
-    import requests
     datos = leer(ruta)
     fila = {"filtro": filtro, "k": k, "hilos": hilos, "resolucion": Path(ruta).stem,
             "codigo_error": "", "marca_tiempo": datetime.now().isoformat(timespec="milliseconds")}
+    cuerpo, tipo = cuerpo_multipart({"filtro": filtro, "k": k, "hilos": hilos}, Path(ruta).name, datos)
+    req = urllib.request.Request(f"{url}/api/procesar", data=cuerpo, method="POST", headers={"Content-Type": tipo})
     t0 = time.perf_counter()
     try:
-        r = sesion.post(f"{url}/api/procesar", files={"imagen": (Path(ruta).name, datos, "image/png")},
-                        data={"filtro": filtro, "k": str(k), "hilos": str(hilos)}, timeout=300)
-        fila["estado_http"] = r.status_code
         try:
-            j = r.json()
-        except ValueError:
-            j = {}
-        fila["id_solicitud"] = j.get("id", r.headers.get("X-Request-ID", ""))
-        if r.status_code == 200:
-            g = sesion.get(url + j["url_resultado"], timeout=300)
-            _ = g.content
-            if g.status_code != 200:
-                fila["codigo_error"] = f"descarga_{g.status_code}"
+            with urllib.request.urlopen(req, timeout=300) as r:
+                estado, j, cab = r.status, json.load(r), r.headers
+        except urllib.error.HTTPError as e:
+            estado, cab = e.code, e.headers
+            try:
+                j = json.load(e)
+            except ValueError:
+                j = {}
+        fila["estado_http"] = estado
+        fila["id_solicitud"] = j.get("id", cab.get("X-Request-ID", ""))
+        if estado == 200:
+            with urllib.request.urlopen(url + j["url_resultado"], timeout=300) as g:
+                g.read()
             fila["bloques"] = j["bloques"]
             fila.update({f"t_{e}_ms": j["tiempos_ms"].get(e, "") for e in ETAPAS})
         else:
-            fila["codigo_error"] = j.get("error", {}).get("codigo", f"http_{r.status_code}")
-    except requests.RequestException as e:
+            fila["codigo_error"] = j.get("error", {}).get("codigo", f"http_{estado}")
+    except (urllib.error.URLError, ConnectionError, TimeoutError) as e:
         fila["estado_http"] = 0
         fila["codigo_error"] = type(e).__name__
     fila["t_cliente_ms"] = round((time.perf_counter() - t0) * 1000, 4)
@@ -82,10 +97,9 @@ def secuencial(esc, sesion, a, experimento, configs):
 
 
 def concurrencia(esc, a):
-    import requests
     ruta = str(Path(a.imagenes) / "4000.png")
     leer(ruta)
-    esc.escribir(solicitud(requests.Session(), a.url, ruta, "media", 9, a.hilos),
+    esc.escribir(solicitud(None, a.url, ruta, "media", 9, a.hilos),
                  experimento="concurrencia", repeticion=0, concurrencia=1)
     for n in (1, 2):
         for ronda in range(1, a.reps + 1):
@@ -93,7 +107,7 @@ def concurrencia(esc, a):
             filas = [None] * n
 
             def cliente(i):
-                s = requests.Session()
+                s = None
                 barrera.wait()
                 filas[i] = solicitud(s, a.url, ruta, "media", 9, a.hilos)
 
@@ -112,7 +126,6 @@ def concurrencia(esc, a):
 
 
 def main():
-    import requests
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--url", default="http://localhost:5000")
     ap.add_argument("--imagenes", default="Imagenes/entrada")
@@ -124,8 +137,8 @@ def main():
     ap.add_argument("--experimentos", default="resolucion,filtros,concurrencia")
     a = ap.parse_args()
 
-    sesion = requests.Session()
-    salud = sesion.get(f"{a.url}/api/salud", timeout=30).json()
+    sesion = None
+    salud = json.load(urllib.request.urlopen(f"{a.url}/api/salud", timeout=30))
     if not salud.get("gpu_disponible"):
         raise SystemExit(f"el servicio no tiene GPU: {salud.get('error')}")
     if not a.entorno:
